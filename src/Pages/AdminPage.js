@@ -3,15 +3,41 @@ import axios from 'axios'
 import { useState, useRef } from 'react'
 import { useMutation } from 'react-query'
 import { useHistory } from 'react-router-dom'
+import Select from 'react-select'
 
 import AdminHeader from '../Components/AdminHeader'
 
 const AdminPage = () => {
     const history = useHistory()
-    const productCode = useRef(null), productName = useRef(null), productDescription = useRef(null), productPrice = useRef(null),
+    var productCode = useRef(null), productName = useRef(null), productDescription = useRef(null), productPrice = useRef(null),
                         productMaker = useRef(null), productCategory = useRef(null), productImage = useRef(null)
     const isLogged = localStorage.getItem('token') != null
 
+    const CategOptions = [
+        { value: "Protecciones Electricas", label: "Protecciones Electricas"},
+        { value: "Sensores", label: "Sensores"},
+        { value: "Seguridad En Máquina", label: "Seguridad En Máquina"},
+        { value: "Iluminación e Indicacion", label: "Iluminación e Indicacion"},
+        { value: "Visión de Máquina", label: "Visión de Máquina"},
+        { value: "Sensor de Redes Inalámbricas", label: "Sensor de Redes Inalámbricas"},
+        { value: "Termocuplas", label: "Termocuplas"},
+        { value: "Automatización y Control", label: "Automatización y Control"},
+        { value: "Fuentes de Alimentación", label: "Fuentes de Alimentación"},
+        { value: "Switches", label: "Switches"},
+        { value: "Delta UPS Solutions", label: "Delta UPS Solutions"},
+        { value: "Ventiladores Axiales", label: "Ventiladores Axiales"},
+        { value: "Motores", label: "Motores"},
+        { value: "Motoreductores", label: "Motoreductores"},
+        { value: "Maniobra, Mando Pulsadores, Selectores y Pilotos", label: "Maniobra, Mando Pulsadores, Selectores y Pilotos"},
+        { value: "Luminarias", label: "Luminarias"},
+    ]
+
+    const MakerOptions = [
+        { value: "Banner", label: "Banner"},
+        { value: "Grainger", label: "Grainger"},
+        { value: "Lovato Electric", label: "Lovato Electric"},
+        { value: "SineTamer", label: "SineTamer"},
+    ]
     
     if(!isLogged)
         history.push('/')
@@ -51,7 +77,7 @@ const AdminPage = () => {
         
         const fd = new FormData()
 
-        if(productCode.current.value == "" || productName.current.value == "" || productDescription.current.value == "" || productPrice.current.value == "" || productMaker.current.value == "" || productCategory.current.value == "")
+        if(productCode.current.value == "" || productName.current.value == "" || productDescription.current.value == "" || productPrice.current.value == "" || productMaker == "[object Object]" || productCategory == "[object Object]")
         {
             alert("No se deben dejar campos vacíos")
         }
@@ -61,8 +87,8 @@ const AdminPage = () => {
             fd.append('name', productName.current.value)
             fd.append('description', productDescription.current.value)
             fd.append('price', productPrice.current.value)
-            fd.append('maker', productMaker.current.value)
-            fd.append('category', productCategory.current.value)
+            fd.append('maker', productMaker)
+            fd.append('category', productCategory)
             fd.append('productImg', selectedFile)
 
             console.log(selectedFile)
@@ -79,6 +105,14 @@ const AdminPage = () => {
         history.push('/')
     }
 
+    const makerChange = selectedOption => {
+        productMaker = selectedOption.value
+    }
+
+    const categoryChange = selectedOption => {
+        productCategory = selectedOption.value
+    }
+
     return(
         <>
         <div className="w-full bg-gray-500 flex justify-end h-auto">
@@ -88,7 +122,7 @@ const AdminPage = () => {
             </div>
         </div>
             <AdminHeader/>
-            <div className="bg-gray-300 w-full h-full flex flex-col items-center">
+            <div className="bg-gray-300 w-full h-full flex flex-col items-center overflow-y-auto">
                 <h1 className="text-gray-600 text-3xl font-bold underline p-5 m-5">DEPROINV ADMINISTRACIÓN</h1>
                 <h2 className="font-bold text-lg">CARGA DE PRODUCTOS</h2>
                 <div className="flex flex-col-2 w-auto h-full bg-white shadow-xl rounded-xl">
@@ -107,11 +141,11 @@ const AdminPage = () => {
                         </div>
                         <div className="flex flex-col w-full justify-center items-center">
                             <label className="mt-3 text-lg">Marca de producto</label>
-                            <input ref={productMaker} type="text" className="my-3 border rounded shadow-md text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none"></input>
+                            <Select className="w-full shadow-md" isSearchable={true} options={MakerOptions} onChange={makerChange}/>
                         </div>
                         <div className="flex flex-col w-full justify-center items-center">
                             <label className="mt-3 text-lg">Categoria de producto</label>
-                            <input ref={productCategory} type="text" className="my-3 border rounded shadow-md text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none"></input>
+                            <Select className="w-full shadow-md" isSearchable={true} options={CategOptions} onChange={categoryChange}/>
                         </div>
                     </div>
                     <div className="m-10">
