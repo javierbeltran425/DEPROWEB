@@ -43,6 +43,8 @@ const AdminPageUpdate = () => {
         { value: "Grainger", label: "Grainger"},
         { value: "Lovato Electric", label: "Lovato Electric"},
         { value: "SineTamer", label: "SineTamer"},
+        { value: "Disoric", label: "Disoric"},
+        { value: "Maruson", label: "Maruson"},
     ]
     
     if(!isLogged)

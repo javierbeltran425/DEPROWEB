@@ -21,22 +21,37 @@ const ProductSelector = () => {
         <>
         <div className={"flex flex-row w-full h-auto bg-gray-200 shadow-lg divide-x divide-gray-300 overflow-hidden"}>
             <div className="text-gray-600 text-center w-1/2">
-                <h2 className="p-3 font-bold underline">CONTROL Y PROTECCIÓN DE MOTOR</h2>
                 <ul>
-                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full" >Motores</button></li>
-                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full" >Motores</button></li>
-                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full" >Motores</button></li>
-                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full" >Motores</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Protecciones Electricas</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Sensores</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Seguridad En Máquina</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Iluminación e Indicacion</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Visión de Máquina</button></li>
                 </ul>
             </div>
             <div className="text-gray-600 text-center w-1/2">
-            <h2 className="p-3 font-bold underline">MANDO Y SEÑALIZACIÓN</h2>
-            <ul>
-                <li className="hover:bg-gray-500 p-1"><a href="#">Producto 1</a></li>
-                <li className="hover:bg-gray-500 p-1"><a href="#">Producto 2</a></li>
-                <li className="hover:bg-gray-500 p-1"><a href="#">Producto 3</a></li>
-                <li className="hover:bg-gray-500 p-1"><a href="#">Producto 4</a></li>
-            </ul>
+                <ul>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Sensor de Redes Inalámbricas</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Termocuplas</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Automatización y Control</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Fuentes de Alimentación</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Switches</button></li>
+                </ul>
+            </div>
+            <div className="text-gray-600 text-center w-1/2">
+                <ul>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Control</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Delta UPS Solutions</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Ventiladores Axiales</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Motores</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Motoreductores</button></li>
+                </ul>
+            </div>
+            <div className="text-gray-600 text-center w-1/2">
+                <ul>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Maniobra Mando Pulsadores,Selectores y Pilotos</button></li>
+                    <li><button onClick={Motores} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Luminarias</button></li>
+                </ul>
             </div>
         </div>
         </>

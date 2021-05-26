@@ -7,7 +7,6 @@ const ProductCard = ({ title, img, desc, price }) => {
                 <h3 className="font-bold">{title}</h3>
                 <div>
                     <p className="">{desc}</p>
-                    <p>${price}</p>
                 </div>
                 <a href="https://api.whatsapp.com/send?phone=50378532004" className="bg-gray-600 text-white text-center rounded-md shadow-lg hover:bg-gray-300 hover:text-black duration-500 w-1/2 mt-5 mb-2" >Cotizar</a>
             </div>
