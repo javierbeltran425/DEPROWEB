@@ -56,7 +56,7 @@ const Products = () => {
     return(
         <>
             <div className="w-full h-auto bg-gray-300">
-            <div className="fixed flex flex-wrap top-0 z-10">
+            <div className="fixed flex flex-wrap top-0 z-20">
                 <ProductsHeader />
             </div>
                 <div className="w-full flex flex-wrap">
