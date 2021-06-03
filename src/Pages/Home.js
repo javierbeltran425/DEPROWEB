@@ -89,7 +89,7 @@ const Home = () => {
                             }/>
                         </div>
                         <div className="flex justify-center lg:justify-end">
-                            <CompaniesCard title={"DISORIC"} img={Disoric} msg={<p>
+                            <CompaniesCard title={"DI-SORIC"} img={Disoric} msg={<p>
                                 Disoric especializado en automatización industrial durante casi 40 años. Desarrollamos, fabricamos y comercializamos un amplio espectro de sensores innovadores, componentes de procesamiento de imágenes de alto rendimiento, máquinas LED de alta calidad e iluminación de señales, así como productos del área de tecnología de seguridad. Nuestra amplia gama de productos se completa con nuestra flexibilidad para soluciones específicas para el cliente. <br/><br/>
                                 Nuestros productos se utilizan principalmente en las áreas de ensamblaje y manipulación, sistemas robóticos, embalaje y medición y prueba. Y aquí nos centramos en las industrias automotriz, de alimentos y bebidas, farmacéutica, cosmética y electrónica.
                             </p>}/>
