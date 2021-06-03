@@ -56,7 +56,7 @@ const Products = () => {
     return(
         <>
             <div className="w-full h-auto bg-gray-300">
-            <div className="fixed flex flex-wrap top-0 z-10">
+            <div className="fixed flex flex-wrap top-0 z-20">
                 <ProductsHeader />
             </div>
                 <div className="w-full flex flex-wrap">
@@ -65,6 +65,8 @@ const Products = () => {
                         <button className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">Grainger</button>
                         <button className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">Lovato Electric</button>
                         <button className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">SineTamer</button>
+                        <button className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">Disoric</button>
+                        <button className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">Maruson</button>
                     </div>
                     <div className="w-full h-full flex flex-col lg:flex-row lg:flex-wrap justify-center">
                         {content}
