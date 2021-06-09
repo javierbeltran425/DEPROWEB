@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import { useState, useRef } from 'react'
 import { useMutation } from 'react-query'
@@ -119,8 +121,11 @@ const AdminPage = () => {
         <>
         <div className="w-full bg-gray-500 flex justify-end h-auto">
             <div className="flex flex-row mr-5 text-white">
-                <p className="px-4">Bienvenido</p>
-                <button onClick={closeSesionClick} className="px-4 hover:text-black duration-500">Cerrar sesión</button>
+            <p className="px-4">Bienvenido</p>
+                <div className="flex flex-row items-center px-2">
+                    <Icon icon={faSignOutAlt} className="text-blue-300"/>
+                    <a onClick={closeSesionClick} className="px-1 hover:text-blue-300 duration-500 cursor-pointer">Cerrar sesión</a>
+                </div>
             </div>
         </div>
             <AdminHeader/>

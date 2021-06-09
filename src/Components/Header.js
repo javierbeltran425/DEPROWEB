@@ -5,6 +5,11 @@ import { useHistory } from 'react-router-dom'
 
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faClock } from '@fortawesome/free-regular-svg-icons'
+import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import { faUserAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import logo2 from '../resources/depro_logo.png'
 import AboutUsDropdown from '../Components/AboutUsDropdown'
@@ -86,47 +91,72 @@ const Header = () => {
     if(!isLogged){
         content = 
         <div className="flex flex-row mr-5 w-full justify-between text-white">
-            <div className="px-4">
-                <a className="hover:text-black duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>Nosotros</a>
+            <div className="hidden md:inline px-4">
+                <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>NOSOTROS</a>
             </div>
-            <div>
-                <a onClick={loginClick} className="px-4 hover:text-black duration-500 cursor-pointer">Login</a>
-                <a onClick={registerClick} className="px-4 hover:text-black duration-500 cursor-pointer">Registrarse</a>
+            <div className="hidden md:flex md:flex-row md:items-center">
+                <Icon icon={faPhoneAlt} className="text-blue-300"/>
+                <p className="px-2">CONTACTANOS: +503 2252-4892</p>
+            </div>
+            <div className="hidden md:flex md:flex-row md:items-center">
+                <Icon icon={faClock} className="text-blue-300"/>
+                <p className="px-1">HORARIOS DE ATENCIÓN:LUNES A VIERNES 8AM - 6PM </p>
+            </div>
+            <div className="flex flex-row">
+                <div className="flex fle-row items-center px-4">
+                    <Icon icon={faUserAlt} className="text-blue-300"/>
+                    <a onClick={loginClick} className="px-1 hover:text-blue-300 duration-500 cursor-pointer">LOGIN</a>
+                </div>
+                <div className="felx flex-row items-center px-4">
+                    <Icon icon={faSignInAlt} className="text-blue-300"/>
+                    <a onClick={registerClick} className="px-1 hover:text-blue-300 duration-500 cursor-pointer">REGISTRARSE</a>
+                </div>
             </div>
         </div>
     }
     else {
         content = 
-        <div className="flex flex-row mr-5 text-white">
-            <div className="px-4">
-                <a className="hover:text-black duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>Nosotros</a>
+        <div className="flex flex-row w-full justify-between mr-5 text-white">
+            <div className="hidden md:inline px-4">
+                <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>Nosotros</a>
             </div>
-            <div>
+            <div className="hidden md:flex md:flex-row md:items-center">
+                <Icon icon={faPhoneAlt} className="text-blue-300"/>
+                <p className="px-2">CONTACTANOS: +503 2252-4892</p>
+            </div>
+            <div className="hidden md:flex md:flex-row md:items-center">
+                <Icon icon={faClock} className="text-blue-300"/>
+                <p className="px-1">HORARIOS DE ATENCIÓN:LUNES A VIERNES 8AM - 6PM </p>
+            </div>
+            <div className="flex flex-row">
                 <p className="px-4">Bienvenido</p>
-                <a onClick={closeSesionClick} className="px-4 hover:text-black duration-500 cursor-pointer">Cerrar sesión</a>
+                <div className="flex flex-row items-center px-2">
+                    <Icon icon={faSignOutAlt} className="text-blue-300"/>
+                    <a onClick={closeSesionClick} className="px-1 hover:text-blue-300 duration-500 cursor-pointer">Cerrar sesión</a>
+                </div>
             </div>
         </div>
     }
 
     return(
         <>
-        <div className="flex flex-col lg:flex-row lg:flex-wrap w-screen lg:justify-between bg-gray-400 z-20">
-        <div className="w-full bg-gray-500 flex h-auto">
-            { content }            
-        </div>
-        <AboutDropdownDiv useHeight={ aboutDropdown.show ? "300px" : "0" } className={" w-full h-auto flex justify-center transition-all transition-4000 ease-in-out"}>
-            <AboutUsDropdown />
-        </AboutDropdownDiv>
-            <div className="flex flex-row justify-between items-center">
-                <Icon icon={active ? faTimes : faBars} onClick={() => setActive(!active)} className="lg:hidden text-2xl text-white ml-5 my-2" />
-                <img onClick={homeClick} src={logo2} className="h-14 md:w-auto md:h-20 ml-7  lg:display cursor-pointer"/>
+        <nav className="flex flex-col lg:flex-row lg:flex-wrap w-screen lg:justify-between bg-gray-400 z-20">
+            <div className="w-full bg-gray-500 flex h-auto">
+                { content }            
             </div>
-            <ButtonsDiv className={`${ active ? "" : "hidden" } ` + " lg:inline mr-2 flex flex-col lg:flex-row lg:p-6"}>
-                <button onClick={productsClick} className="lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-500">PRODUCTOS</button>
-                <button onClick={servicesClick} className="lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-500">SERVICIOS</button>
-                <button onClick={ourWorksClick} className="lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-500">NUESTROS TRABAJOS</button>
-            </ButtonsDiv>
-        </div>
+            <AboutDropdownDiv useHeight={ aboutDropdown.show ? "300px" : "0" } className={" w-full h-auto flex justify-center transition-all transition-4000 ease-in-out"}>
+                <AboutUsDropdown />
+            </AboutDropdownDiv>
+                <div className="flex flex-row justify-between items-center">
+                    <Icon icon={active ? faTimes : faBars} onClick={() => setActive(!active)} className="lg:hidden text-2xl text-white ml-5 my-2" />
+                    <img onClick={homeClick} src={logo2} className="h-14 md:w-auto md:h-20 ml-7  lg:display cursor-pointer"/>
+                </div>
+                <ButtonsDiv className={`${ active ? "" : "hidden" } ` + " lg:inline mr-2 flex flex-col lg:flex-row lg:p-6"}>
+                    <button onClick={productsClick} className="lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-500">PRODUCTOS</button>
+                    <button onClick={servicesClick} className="lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-500">SERVICIOS</button>
+                    <button onClick={ourWorksClick} className="lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-500">NUESTROS TRABAJOS</button>
+                </ButtonsDiv>
+        </nav>
         </>
     )
 }
