@@ -100,7 +100,7 @@ const Header = () => {
             </div>
             <div className="hidden md:flex md:flex-row md:items-center">
                 <Icon icon={faClock} className="text-blue-300"/>
-                <p className="px-1">HORARIOS DE ATENCIÓN:LUNES A VIERNES 8AM - 6PM </p>
+                <p className="px-1">HORARIOS DE ATENCIÓN: LUNES A VIERNES 8AM - 6PM </p>
             </div>
             <div className="flex flex-row">
                 <div className="flex fle-row items-center px-4">
@@ -126,7 +126,7 @@ const Header = () => {
             </div>
             <div className="hidden md:flex md:flex-row md:items-center">
                 <Icon icon={faClock} className="text-blue-300"/>
-                <p className="px-1">HORARIOS DE ATENCIÓN:LUNES A VIERNES 8AM - 6PM </p>
+                <p className="px-1">HORARIOS DE ATENCIÓN: LUNES A VIERNES 8AM - 6PM </p>
             </div>
             <div className="flex flex-row">
                 <p className="px-4">Bienvenido</p>
