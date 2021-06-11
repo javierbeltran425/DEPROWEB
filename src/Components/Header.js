@@ -96,7 +96,7 @@ const Header = () => {
             </div>
             <div className="flex md:flex-row items-center">
                 <Icon icon={faPhoneAlt} className="text-blue-300 m-2"/>
-                <p className="px-2"><a href="tel:+50322524892">+503 2252-4892</a></p>
+                <p className="px-2"><a href="tel:+50322524892">2252-4892</a></p>
             </div>
             <div className="hidden md:flex md:flex-row md:items-center">
                 <Icon icon={faClock} className="text-blue-300"/>
@@ -122,7 +122,7 @@ const Header = () => {
             </div>
             <div className="flex md:flex-row items-center">
                 <Icon icon={faPhoneAlt} className="text-blue-300 m-2"/>
-                <p className="px-2"><a href="tel:+50322524892">+503 2252-4892</a></p>
+                <p className="px-2"><a href="tel:+50322524892">2252-4892</a></p>
             </div>
             <div className="hidden md:flex md:flex-row md:items-center">
                 <Icon icon={faClock} className="text-blue-300"/>
