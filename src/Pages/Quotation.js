@@ -1,4 +1,4 @@
-const Cart = () => {
+const Quotation = () => {
 return (
     <>
         <div className="flex justify-center w-full bg-blue-900">
@@ -8,4 +8,4 @@ return (
 )
 }
 
-export default Cart
+export default Quotation

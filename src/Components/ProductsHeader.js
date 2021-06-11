@@ -111,19 +111,19 @@ const ProductsHeader = () => {
 
     if(!isLogged){
         content = 
-        <div className="flex flex-row mr-5 w-full justify-between text-white">
+        <div className="flex flex-row mr-5 w-full justify-between text-white text-xs md:text-base">
             <div className="hidden md:inline px-4">
                 <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>NOSOTROS</a>
             </div>
-            <div className="hidden md:flex md:flex-row md:items-center">
-                <Icon icon={faPhoneAlt} className="text-blue-300"/>
-                <p className="px-2">CONTACTANOS: +503 2252-4892</p>
+            <div className="flex md:flex-row items-center">
+                <Icon icon={faPhoneAlt} className="text-blue-300 m-2"/>
+                <p className="px-2"><a href="tel:+50322524892">+503 2252-4892</a></p>
             </div>
             <div className="hidden md:flex md:flex-row md:items-center">
                 <Icon icon={faClock} className="text-blue-300"/>
                 <p className="px-1">HORARIOS DE ATENCIÓN: LUNES A VIERNES 8AM - 6PM </p>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
                 <div className="flex fle-row items-center px-4">
                     <Icon icon={faUserAlt} className="text-blue-300"/>
                     <a onClick={loginClick} className="px-1 hover:text-blue-300 duration-500 cursor-pointer">LOGIN</a>
@@ -137,19 +137,19 @@ const ProductsHeader = () => {
     }
     else {
         content = 
-        <div className="flex flex-row w-full justify-between mr-5 text-white">
+        <div className="flex flex-row mr-5 w-full justify-between text-white text-xs md:text-base">
             <div className="hidden md:inline px-4">
                 <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>Nosotros</a>
             </div>
-            <div className="hidden md:flex md:fle-row md:items-center">
-                <Icon icon={faPhoneAlt} className="text-blue-300"/>
-                <p className="px-2">CONTACTANOS: +503 2252-4892</p>
+            <div className="flex md:flex-row items-center">
+                <Icon icon={faPhoneAlt} className="text-blue-300 m-2"/>
+                <p className="px-2"><a href="tel:+50322524892">+503 2252-4892</a></p>
             </div>
             <div className="hidden md:flex md:flex-row md:items-center">
                 <Icon icon={faClock} className="text-blue-300"/>
                 <p className="px-1">HORARIOS DE ATENCIÓN: LUNES A VIERNES 8AM - 6PM </p>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
                 <p className="px-4">Bienvenido</p>
                 <div className="flex flex-row items-center px-2">
                     <Icon icon={faSignOutAlt} className="text-blue-300"/>
