@@ -6,7 +6,7 @@ import RegisterPage from './Pages/RegisterPage'
 import LoginPage from './Pages/LoginPage'
 import AdminPage from './Pages/AdminPage.js'
 import AdminPageUpdate from './Pages/AdminPageUpdate.js'
-import Cart from './Pages/Cart'
+import Quotation from './Pages/Quotation'
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Route exact path='/register-page' component={RegisterPage}/>
           <Route exact path='/admin-page-upload' component={AdminPage}/>
           <Route exact path='/admin-page-update' component={AdminPageUpdate}/>
-          <Route excat path='/cart' component={Cart}/>
+          <Route excat path='/quotation' component={Quotation}/>
         </Switch>
       </Router>
     </>
