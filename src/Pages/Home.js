@@ -42,7 +42,7 @@ const Home = () => {
                         <div className="absolute w-full h-screen bottom-0 text-justify flex flex-col justify-center items-center lg:flex-row">
                             <h1 className="text-white font-bold text-3xl md:text-6xl lg:p-5 lg:m-20">DEPROINV</h1>
                             <p className="hidden lg:inline text-8xl text-white overflow-hidden">|</p>
-                            <p className="text-white text-sm p-5 md:text-3xl lg:p-8">"Deltas Proyectos e inversiones, una empresa apasionada y dedicada al manejo de proyectos Solares, automatizacion, de iluminacion y equipos de proteccion electrica, entre otros."</p>
+                            <p className="text-white text-sm p-5 md:text-2xl lg:p-8">"Deltas Proyectos e inversiones, una empresa apasionada y dedicada al manejo de proyectos Solares, automatizacion, de iluminacion y equipos de proteccion electrica, entre otros."</p>
                         </div>
                     </div>
                     <div className="flex flex-wrap w-full bg-gray-300">
@@ -100,7 +100,7 @@ const Home = () => {
                                 La preparación es la clave para que las operaciones sigan avanzando. Los cortes de energía debido a tormentas, cortes de la red eléctrica o accidentes son impredecibles. Maruson tiene casi todo lo que necesita para darle suficiente energía a sus dispositivos electrónicos conectados críticos para capear la tormenta.
                             </p>}/>
                         </div>
-                        <a href="https://api.whatsapp.com/send?phone=50378532004" className="fixed z-10 w-16 h-16 m-10 right-0 bottom-0 animate-bounce"><img src={Whatsapp}/></a>
+                        <a href="https://api.whatsapp.com/send?phone=50378532004" className="fixed z-10 w-16 h-16 m-10 right-0 bottom-0"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-900 opacity-75"></span><img src={Whatsapp}/></a>
                     </div>
                 <Footer/>
         </>

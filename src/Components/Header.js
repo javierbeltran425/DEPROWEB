@@ -90,9 +90,9 @@ const Header = () => {
 
     if(!isLogged){
         content = 
-        <div className="flex flex-row mr-5 w-full justify-between text-white text-xs md:text-base">
+        <div className="flex flex-row mr-5 w-full justify-between text-white text-xs md:text-base items-center">
             <div className="hidden md:inline px-4">
-                <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>NOSOTROS</a>
+                <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>LA EMPRESA</a>
             </div>
             <div className="flex md:flex-row items-center">
                 <Icon icon={faPhoneAlt} className="text-blue-300 m-2"/>
@@ -116,9 +116,9 @@ const Header = () => {
     }
     else {
         content = 
-        <div className="flex flex-row mr-5 w-full justify-between text-white text-xs md:text-base">
+        <div className="flex flex-row mr-5 w-full justify-between text-white text-xs md:text-base items-center">
             <div className="hidden md:inline px-4">
-                <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>Nosotros</a>
+                <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>LA EMPRESA</a>
             </div>
             <div className="flex md:flex-row items-center">
                 <Icon icon={faPhoneAlt} className="text-blue-300 m-2"/>
@@ -140,8 +140,8 @@ const Header = () => {
 
     return(
         <>
-        <nav className="flex flex-col lg:flex-row lg:flex-wrap w-screen lg:justify-between bg-gray-400 z-20">
-            <div className="w-full bg-gray-500 flex h-auto">
+        <nav className="flex flex-col lg:flex-row lg:flex-wrap w-full lg:justify-between bg-gray-400 z-20">
+            <div className="w-full bg-gray-500 flex justify-end h-auto">
                 { content }            
             </div>
             <AboutDropdownDiv useHeight={ aboutDropdown.show ? "300px" : "0" } className={" w-full h-auto flex justify-center transition-all transition-4000 ease-in-out"}>
