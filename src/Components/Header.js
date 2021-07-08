@@ -90,7 +90,7 @@ const Header = () => {
 
     if(!isLogged){
         content = 
-        <div className="flex flex-row mr-5 w-full justify-between text-white text-xs md:text-base items-center">
+        <div className="flex flex-row mr-2 w-full justify-between text-white text-xs md:text-base items-center">
             <div className="hidden md:inline px-4">
                 <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>LA EMPRESA</a>
             </div>
@@ -103,7 +103,7 @@ const Header = () => {
                 <p className="px-1">HORARIOS DE ATENCIÓN: LUNES A VIERNES 8AM - 6PM </p>
             </div>
             <div className="flex flex-row items-center">
-                <div className="flex fle-row items-center px-4">
+                <div className="flex flex-row items-center px-4">
                     <Icon icon={faUserAlt} className="text-blue-300"/>
                     <a onClick={loginClick} className="px-1 hover:text-blue-300 duration-500 cursor-pointer">LOGIN</a>
                 </div>
@@ -116,7 +116,7 @@ const Header = () => {
     }
     else {
         content = 
-        <div className="flex flex-row mr-5 w-full justify-between text-white text-xs md:text-base items-center">
+        <div className="flex flex-row mr-2 w-full justify-between text-white text-xs md:text-base items-center">
             <div className="hidden md:inline px-4">
                 <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>LA EMPRESA</a>
             </div>
