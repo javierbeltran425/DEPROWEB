@@ -10,8 +10,9 @@ import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
 import { faUserAlt } from '@fortawesome/free-solid-svg-icons'
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
-import ProductSelector from '../Components/ProductSelector'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
+import ProductSelector from '../Components/ProductSelector'
 import AboutUsDropdown from '../Components/AboutUsDropdown'
 
 import logo2 from '../resources/depro_logo.png'
@@ -101,6 +102,12 @@ const ProductsHeader = () => {
         history.push('login-page')
     }
 
+    function quotationOnClick(e) {
+        e.preventDefault()
+
+        history.push('/quotation')
+    }
+
     function closeSesionClick(e) {
         e.preventDefault()
 
@@ -176,6 +183,7 @@ const ProductsHeader = () => {
                     <button onClick={productsClick} className="lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-500">CATEGORIAS</button>
                     <button onClick={servicesClick} className="lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-500">SERVICIOS</button>
                     <button onClick={ourWorksClick} className="lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-500">NUESTROS TRABAJOS</button>
+                    <button onClick={quotationOnClick} className="lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-500">COTIZACIONES <Icon icon={faShoppingCart} className="ml-2" /> </button>
                 </ButtonsDiv>
         </nav>
         <DropdownDiv useHeight={ dropdown.show ? "300px" : "0" } className={" w-full h-auto flex justify-center transition-all transition-4000 ease-in-out"}>
