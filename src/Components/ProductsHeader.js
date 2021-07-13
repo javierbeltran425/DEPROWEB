@@ -1,6 +1,7 @@
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import styled from 'styled-components'
+import { useAxiosGet } from '../Hooks/useAxiosGet'
 import { useHistory } from 'react-router-dom'
 
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -40,6 +41,7 @@ const ProductsHeader = () => {
     const [ dropdown, setDropdown ] = useState({ show: false })
     const [ menuShow, setMenuShow ] = useState({ show: false })
 
+    let actUser = useAxiosGet(process.env.REACT_APP_API_URL + 'users/my-info' )
     let content = null
 
     function productsClick(e) {
@@ -105,7 +107,7 @@ const ProductsHeader = () => {
     function quotationOnClick(e) {
         e.preventDefault()
 
-        history.push('/quotation')
+        history.push('/quotation', actUser)
     }
 
     function closeSesionClick(e) {

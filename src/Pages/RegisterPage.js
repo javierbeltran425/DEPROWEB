@@ -9,7 +9,7 @@ const RegisterPage = () => {
     const fullname = useRef(null), username = useRef(null), password = useRef(null), email = useRef(null)
 
     const [ mutate, isLoading ] = useMutation(register => {
-        axios.post('https://deproapi.herokuapp.com/users/' + 'register', register)
+        axios.post(process.env.REACT_APP_API_URL + 'users/register', register)
             .then(res => {
                 console.log(res.data)
 

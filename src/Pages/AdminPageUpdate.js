@@ -50,7 +50,7 @@ const AdminPageUpdate = () => {
     if(!isLogged)
         history.push('/')
 
-    axios.get('https://deproapi.herokuapp.com/users/my-info', {
+    axios.get(process.env.REACT_APP_API_URL + 'users/my-info', {
         headers: { Authorize: localStorage.getItem('token') }
     })
     .then(res => {
@@ -61,7 +61,7 @@ const AdminPageUpdate = () => {
     const fd = new FormData()
 
     const [ mutate, isLoading ] = useMutation(upload => {
-        axios.put('https://deproapi.herokuapp.com/' + 'products/product-upload', upload, {
+        axios.put(process.env.REACT_APP_API_URL + 'products/product-upload', upload, {
             headers: {"Content-Type": "multipart/form-data"}
         })
             .then(res => {
@@ -112,10 +112,10 @@ const AdminPageUpdate = () => {
         e.preventDefault()
 
         console.log(productCode.current.value)
-        let petition = await axios.get('https://deproapi.herokuapp.com/products/product-code?productID=' + `${productCode.current.value}`)
+        let petition = await axios.get(process.env.REACT_APP_API_URL + 'products/product-code?productID=' + `${productCode.current.value}`)
 
         if(petition.error){
-            alert('F')
+            alert('Ocurrió un error')
         }
 
         console.log(petition)

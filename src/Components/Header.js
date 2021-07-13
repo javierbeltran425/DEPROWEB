@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
+import { useAxiosGet } from '../Hooks/useAxiosGet'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -34,6 +35,8 @@ const Header = () => {
     const [ menuShow, setMenuShow ] = useState({ show: false })
 
     let content = null
+
+    let actUser = useAxiosGet(process.env.REACT_APP_API_URL + 'users/my-info' )
 
     function productsClick(e) {
         e.preventDefault()
@@ -84,7 +87,7 @@ const Header = () => {
     function quotationOnClick(e) {
         e.preventDefault()
 
-        history.push('/quotation')
+        history.push('/quotation', actUser)
     }
 
     function closeSesionClick(e) {
