@@ -87,7 +87,10 @@ const Header = () => {
     function quotationOnClick(e) {
         e.preventDefault()
 
-        history.push('/quotation', actUser)
+        if(!isLogged)
+            history.push('/login-page')
+        else
+            history.push('/quotation', actUser)
     }
 
     function closeSesionClick(e) {

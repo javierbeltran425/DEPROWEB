@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { useMutation } from 'react-query'
 import { useHistory } from 'react-router-dom'
 import { useAxiosGet } from '../Hooks/useAxiosGet'
 
@@ -15,22 +16,45 @@ const Quotation = (actUser) => {
 
     if(!isLogged)
         history.push('/login-page')
-
-    
-    console.log(actUser)
     
     petition = useAxiosGet(process.env.REACT_APP_API_URL + 'userxproducts/getxuser?username=' + actUser.location.state.response.user.username)
 
-    console.log(petition)
+    const [ mutate, isLoading  ] = useMutation(quotation => {
+        axios.post(process.env.REACT_APP_API_URL + 'users/sendquotation', quotation)
+            .then(res => {
+                console.log(res.data)
+
+                if(res.status === 201)
+                    alert("Solicitud envíada")
+            })
+            .catch(({ response }) => {
+                alert("Algo salió mal")
+            })
+    })
 
     if(petition.error){
         alert('Ha ocurrido un error')
     }
 
     if(petition.response != null){
+        console.log(petition.response.products)
         content = petition.response.products.map(e => 
             <ProductCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
         )
+    }
+
+    function senddingQuotation(e) {
+        e.preventDefault()
+
+        if(petition.response === null)
+            alert("No tiene productos en el carrito")
+        else{
+            var quotationData = { 
+                email: actUser.location.state.response.user.email,
+                products: petition.response.products
+            }
+            mutate(quotationData)
+        }
     }
 
     return (
@@ -38,10 +62,10 @@ const Quotation = (actUser) => {
             <Header />
             <h1 className="text-center font-extrabold text-xl m-5">¡Bienvenido a tu carrito de cotizacciones Deproinv!</h1>
 
-            <div className="h-screen w-full">
+            <div className="min-h-screen w-full">
                 {content}
-                <div className="flex absolute bottom-0 w-full justify-center">
-                    <button className="bg-gray-600 text-white text-center rounded-md shadow-lg hover:bg-gray-300 hover:text-black duration-500 w-1/2 mt-5 mb-2" >Solicitar cotización</button>
+                <div className="flex bottom-0 w-full justify-center">
+                    <button onClick={senddingQuotation} className="bg-gray-600 text-white text-center rounded-md shadow-lg hover:bg-gray-300 hover:text-black duration-500 w-1/2 mt-5 mb-2" >Solicitar cotización</button>
                 </div>
             </div>
             <Footer />
