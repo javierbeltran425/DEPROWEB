@@ -11,6 +11,9 @@ let petition = null
 
 const Quotation = (actUser) => {
     let content = null
+    let codsQuotation = null
+    let nameQuotation = null
+    let makerQuotation = null
     const history = useHistory()
     const isLogged = localStorage.getItem('token') != null
 
@@ -28,6 +31,7 @@ const Quotation = (actUser) => {
                     alert("Solicitud envíada")
             })
             .catch(({ response }) => {
+                console.log(response)
                 alert("Algo salió mal")
             })
     })
@@ -43,6 +47,20 @@ const Quotation = (actUser) => {
         )
     }
 
+    if(petition.response != null){
+        codsQuotation = petition.response.products.map(e => 
+            e.productID
+        )
+
+        nameQuotation = petition.response.products.map(e => 
+            e.name
+        )
+
+        makerQuotation = petition.response.products.map(e => 
+            e.maker
+        ) 
+    }
+
     function senddingQuotation(e) {
         e.preventDefault()
 
@@ -51,8 +69,11 @@ const Quotation = (actUser) => {
         else{
             var quotationData = { 
                 email: actUser.location.state.response.user.email,
-                products: petition.response.products
+                cods: codsQuotation,
+                name: nameQuotation,
+                maker: makerQuotation
             }
+            
             mutate(quotationData)
         }
     }
