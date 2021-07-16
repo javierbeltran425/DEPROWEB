@@ -8,22 +8,29 @@ import { useHistory } from 'react-router-dom'
 
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const QuotationCard = ({ title, img, desc, productID, maker, categ }) => {
+const QuotationCard = ({ title, img, desc, productID, maker, categ, actUser }) => {
     var [amount, setAmount] = useState(1)
     const history = useHistory()
     const isLogged = localStorage.getItem('token') != null
 
-    amount = localStorage.getItem(productID)
+    if(localStorage.getItem(productID) != null)
+        amount = localStorage.getItem(productID)
+    else
+        localStorage.setItem(productID, 1)
 
-    const [ mutate, isLoading ] = useMutation(register => {
-        axios.post(process.env.REACT_APP_API_URL + 'userxproducts/userxproduct-register', register)
+    const [ mutate, isLoading ] = useMutation(unRegister => {
+        axios.put(process.env.REACT_APP_API_URL + 'userxproducts/deletexuser', unRegister, {
+            headers: {"Content-Type": "application/json"}
+        })
             .then(res => {
-                if(res.status === 201){
-                    alert("Producto agregado a Cotizaciones")
+                if(res.status === 200){
+                    alert("Producto borrado de Cotizaciones")
+                    localStorage.removeItem(productID)
+                    window.location.replace('');
                 }
             })
             .catch(({ response }) => {
-                alert("No ha sido posible agregar el producto o ya se encuentra en Cotizaciones.")
+                alert("Ha ocurrido un error, vuelve a intentarlo más tarde.")
             })
     })
     
@@ -32,7 +39,6 @@ const QuotationCard = ({ title, img, desc, productID, maker, categ }) => {
 
         setAmount(amount++)
         localStorage.setItem(productID, amount )
-        console.log(amount)
     }
 
     function subtractQuotation(e) {
@@ -40,16 +46,26 @@ const QuotationCard = ({ title, img, desc, productID, maker, categ }) => {
 
         setAmount(amount--)
         localStorage.setItem(productID, amount )
-        console.log(amount)
+    }
+
+    function deleteQuotation(e) {
+        e.preventDefault()
+
+        var data = {
+            username: actUser.location.state.response.user.username,
+            productID: productID,
+        }
+
+        mutate(data)
     }
 
     return(
         <>
-        <div className="bg-white lg:w-2/4 h-1/3 overflow-hidden flex items-center rounded-lg shadow-md m-5 hover:shadow-xl transform hover:scale-105 duration-500">
-        <Icon icon={faTrash} className="absolute top-3 right-3 text-black text-xl hover:text-red-600 duration-500 cursor-pointer"/>
+        <div className="bg-white lg:w-2/4 h-1/3 overflow-hidden flex flex-col lg:flex-row items-center rounded-lg shadow-md m-5 hover:shadow-xl transform hover:scale-105 duration-500">
+        <Icon onClick={deleteQuotation} icon={faTrash} className="absolute top-3 right-3 text-black text-xl hover:text-red-600 duration-500 cursor-pointer"/>
             <img src={process.env.REACT_APP_BUCKET + img} alt="producto" className="w-1/3 h-auto m-5"/>
-            <div className="flex flex-col w-full justify-end text-right mr-10 my-2 items-end">
-                <h3 className="font-bold">{title}</h3>
+            <div className="flex flex-col items-center w-full lg:justify-end text-right mr-10 my-2 lg:items-end">
+                <h3 className="font-bold text-sm lg:text-base overflow-ellipsis">{title}</h3>
                 <div>
                     <p className="">{desc}</p>
                     <p className="font-bold">Marca: {maker}</p>

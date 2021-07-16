@@ -11,7 +11,7 @@ let petition = null
 
 const Quotation = (actUser) => {
     let content = null
-    let amount = 1
+    let amount = []
     let codsQuotation = null
     let nameQuotation = null
     let makerQuotation = null
@@ -44,7 +44,7 @@ const Quotation = (actUser) => {
     if(petition.response != null){
         console.log(petition.response.products)
         content = petition.response.products.map(e => 
-            <QuotationCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
+            <QuotationCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} actUser={actUser} />
         )
     }
 
@@ -65,6 +65,12 @@ const Quotation = (actUser) => {
     function senddingQuotation(e) {
         e.preventDefault()
 
+        for(let i = 0; i < codsQuotation.length; i++){
+            amount[i] = localStorage.getItem(codsQuotation[i])
+        }
+
+        if(content < 1) throw alert("No tiene productos en el carrito")
+
         if(petition.response === null)
             alert("No tiene productos en el carrito")
         else{
@@ -72,8 +78,11 @@ const Quotation = (actUser) => {
                 email: actUser.location.state.response.user.email,
                 cods: codsQuotation,
                 name: nameQuotation,
-                maker: makerQuotation
+                maker: makerQuotation,
+                amount: amount
             }
+
+            console.log("Cantidad: " + quotationData.amount)
             
             mutate(quotationData)
         }
@@ -88,7 +97,7 @@ const Quotation = (actUser) => {
                 <div className="flex flex-col items-center justify-center w-full">
                     {content}
                 </div>
-                <div className="flex bottom-0 w-full justify-center">
+                <div className="flex w-full justify-center mt-10">
                     <button onClick={senddingQuotation} className="bg-gray-600 text-white text-center rounded-md shadow-lg hover:bg-gray-300 hover:text-black duration-500 w-1/2 mt-5 mb-2" >Solicitar cotización</button>
                 </div>
             </div>
