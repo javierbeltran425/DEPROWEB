@@ -5,12 +5,13 @@ import { useAxiosGet } from '../Hooks/useAxiosGet'
 
 import Header from '../Components/Header.js'
 import Footer from '../Components/Footer.js'
-import ProductCard from '../Components/ProductCard'
+import QuotationCard from '../Components/QuotationCard'
 
 let petition = null
 
 const Quotation = (actUser) => {
     let content = null
+    let amount = 1
     let codsQuotation = null
     let nameQuotation = null
     let makerQuotation = null
@@ -43,7 +44,7 @@ const Quotation = (actUser) => {
     if(petition.response != null){
         console.log(petition.response.products)
         content = petition.response.products.map(e => 
-            <ProductCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
+            <QuotationCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
         )
     }
 
@@ -82,9 +83,11 @@ const Quotation = (actUser) => {
         <>
             <Header />
             <h1 className="text-center font-extrabold text-xl m-5">¡Bienvenido a tu carrito de cotizacciones Deproinv!</h1>
-
+            <p className="text-xs text-center mb-10">(Para cotizaciones muy grandes, si lo prefiere, puede ponerse en contacto directamente con nosotros a travez de nuestro número telefónico)</p>
             <div className="min-h-screen w-full">
-                {content}
+                <div className="flex flex-col items-center justify-center w-full">
+                    {content}
+                </div>
                 <div className="flex bottom-0 w-full justify-center">
                     <button onClick={senddingQuotation} className="bg-gray-600 text-white text-center rounded-md shadow-lg hover:bg-gray-300 hover:text-black duration-500 w-1/2 mt-5 mb-2" >Solicitar cotización</button>
                 </div>
