@@ -6,7 +6,9 @@ export function useAxiosGet(url) {
     const [ request, setRequest ] = useState({ status: 'loading', error: false, response: null })
 
     useEffect(() => {
-        axios.get(url)
+        axios.get(url, {
+            headers: { Authorize: localStorage.getItem('token') }
+        })
             .then(res => {
                 setRequest({ status: 'done', error: false, response: res.data })
             })

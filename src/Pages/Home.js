@@ -11,6 +11,7 @@ import LovatoPic from '../resources/Brands/LovatoElectric.png'
 import SineTimer from '../resources/Brands/sinetamer.png'
 import Disoric from '../resources/Brands/disoric.png'
 import Maruson from '../resources/Brands/maruson.png'
+import HomeLogo from '../resources/depro_log2.png'
 
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
@@ -40,7 +41,7 @@ const Home = () => {
                     <div className="w-full h-screen bg-gradient-to-r from-gray-900 to-gray-700">
                         <BackDiv className="w-full h-screen opacity-20" />
                         <div className="absolute w-full h-screen bottom-0 text-justify flex flex-col justify-center items-center lg:flex-row">
-                            <h1 className="text-white font-bold text-3xl md:text-6xl lg:p-5 lg:m-20">DEPROINV</h1>
+                            <img src={HomeLogo} className="lg:w-1/3"/>
                             <p className="hidden lg:inline text-8xl text-white overflow-hidden">|</p>
                             <p className="text-white text-sm p-5 md:text-2xl lg:p-8">"Deltas Proyectos e inversiones, una empresa apasionada y dedicada al manejo de proyectos Solares, automatizacion, de iluminacion y equipos de proteccion electrica, entre otros."</p>
                         </div>

@@ -55,7 +55,7 @@ const AdminPage = () => {
     })
 
     const [ mutate, isLoading  ] = useMutation(register => {
-        axios.post('https://deproapi.herokuapp.com/' + 'products/product-register', register)
+        axios.post(process.env.REACT_APP_API_URL + 'products/product-register', register)
             .then(res => {
                 console.log(res.data)
 

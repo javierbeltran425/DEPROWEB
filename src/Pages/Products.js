@@ -44,12 +44,12 @@ const Products = () => {
     console.log("Desde vista products: " + category)
 
     if(petition.error){
-        alert('F')
+        alert('Ha ocurrido un error')
     }
 
     if(petition.response != null){
         content = petition.response.products.map(e => 
-            <ProductCard title={`${e.name}`} img={process.env.REACT_APP_BUCKET + `${e.productImg}`} desc={`${e.description}`} price={e.price} />
+            <ProductCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
         )
     }
 
