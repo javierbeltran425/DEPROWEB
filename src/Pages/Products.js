@@ -12,15 +12,19 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useAxiosGet } from '../Hooks/useAxiosGet'
+import { useAxiosPost } from '../Hooks/useAxiosPost'
 
 import ProductCard from '../Components/ProductCard'
 
 const Products = () => {
-    const [ comp, setComp ] = useState({ comp: 'products', status: 'done' })
+    const [ comp, setComp ] = useState(null)
     const history = useHistory()
     const [page, setPage] = useState(1)
 
-    var category = localStorage.getItem('maker')
+    var category = localStorage.getItem('category')
+    let auxData = {
+        category: category
+    }
 
     axios.get(process.env.REACT_APP_API_URL + 'users/my-info', {
         headers: { Authorize: localStorage.getItem('token') }
@@ -31,6 +35,9 @@ const Products = () => {
     })
 
     let petition = useAxiosGet(process.env.REACT_APP_API_URL + 'products?page=' + page)
+
+    let petitionFilter = useAxiosPost(process.env.REACT_APP_API_URL + 'products/product-category?page=' + page, auxData)
+
     let content = null
 
     const nextPage = () => {
@@ -47,10 +54,20 @@ const Products = () => {
         alert('Ha ocurrido un error')
     }
 
-    if(petition.response != null){
-        content = petition.response.products.map(e => 
-            <ProductCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
-        )
+    if(!category){
+        if(petition.response != null){
+            content = petition.response.products.map(e => 
+                <ProductCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
+            )
+        }
+    }
+
+    if(category){
+        if(petitionFilter.response != null){
+            content = petitionFilter.response.products.map(e => 
+                <ProductCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
+            )
+        }
     }
 
     return(
