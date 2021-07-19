@@ -19,8 +19,8 @@ const ProductSelector = () => {
 
     return(
         <>
-        <div className={"flex flex-row w-full h-auto bg-gray-200 shadow-lg divide-x divide-gray-300 overflow-hidden"}>
-            <div className="text-gray-600 text-center w-1/2">
+        <div className={"flex flex-col overflow-y-auto md:flex-row w-auto md:w-full h-auto bg-gray-200 shadow-lg md:divide-x md:divide-gray-300 overflow-hidden"}>
+            <div className="text-gray-600 text-left md:text-center w-auto md:w-1/2">
                 <ul>
                     <li><button onClick={()=> {
                         localStorage.removeItem('category')
@@ -32,7 +32,7 @@ const ProductSelector = () => {
                     <li><button onClick={()=> SetCategory('Iluminación e Indicacion')} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Iluminación e Indicacion</button></li>
                 </ul>
             </div>
-            <div className="text-gray-600 text-center w-1/2">
+            <div className="text-gray-600 text-left md:text-center w-auto md:w-1/2">
                 <ul>
                     <li><button onClick={()=> SetCategory('Sensor de Redes Inalámbricas')} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Sensor de Redes Inalámbricas</button></li>
                     <li><button onClick={()=> SetCategory('Termocuplas')} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Termocuplas</button></li>
@@ -41,7 +41,7 @@ const ProductSelector = () => {
                     <li><button onClick={()=> SetCategory('Switches')} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Switches</button></li>
                 </ul>
             </div>
-            <div className="text-gray-600 text-center w-1/2">
+            <div className="text-gray-600 text-left md:text-center w-auto md:w-1/2">
                 <ul>
                     <li><button onClick={()=> SetCategory('Control')} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Control</button></li>
                     <li><button onClick={()=> SetCategory('Delta UPS Solutions')} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Delta UPS Solutions</button></li>
@@ -50,7 +50,7 @@ const ProductSelector = () => {
                     <li><button onClick={()=> SetCategory('Motoreductores')} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Motoreductores</button></li>
                 </ul>
             </div>
-            <div className="text-gray-600 text-center w-1/2">
+            <div className="text-gray-600 text-left md:text-center w-auto md:w-1/2">
                 <ul>
                     <li><button onClick={()=> SetCategory('Maniobra Mando Pulsadores,Selectores y Pilotos')} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Maniobra Mando Pulsadores,Selectores y Pilotos</button></li>
                     <li><button onClick={()=> SetCategory('Luminarias')} className="hover:bg-gray-500 p-1 w-full hover:text-white" >Luminarias</button></li>
