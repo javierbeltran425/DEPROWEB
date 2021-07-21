@@ -9,6 +9,12 @@ const AboutUsDropdown = () => {
         history.push('/about-us')
     }
 
+    function blogOnClick(e) {
+        e.preventDefault()
+
+        history.push('/blog')
+    }
+
     return(
         <>
         <div className={"flex flex-row w-full h-auto bg-gray-300 shadow-lg overflow-hidden text-gray-800 divide-x-2 divide-gray-200 divide-solid font-bold"}>
@@ -26,7 +32,7 @@ const AboutUsDropdown = () => {
             
             <div className="flex mx-1 flex-col">
                 <p className="ml-2 text-blue-500">Noticias</p>
-                <p className="ml-2 cursor-pointer font-semibold hover:underline">Blog</p>
+                <p onClick={blogOnClick} className="ml-2 cursor-pointer font-semibold hover:underline">Blog</p>
             </div>
         </div>
         </>

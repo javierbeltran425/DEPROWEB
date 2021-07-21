@@ -91,14 +91,16 @@ const Quotation = (actUser) => {
     return (
         <>
             <Header />
-            <h1 className="text-center font-extrabold text-xl m-5">¡Bienvenido a tu carrito de cotizacciones Deproinv!</h1>
-            <p className="text-xs text-center mb-10">(Para cotizaciones muy grandes, si lo prefiere, puede ponerse en contacto directamente con nosotros a travez de nuestro número telefónico)</p>
-            <div className="min-h-screen w-full">
-                <div className="flex flex-col items-center justify-center w-full">
-                    {content}
-                </div>
-                <div className="flex w-full justify-center mt-10">
-                    <button onClick={senddingQuotation} className="bg-gray-600 text-white text-center rounded-md shadow-lg hover:bg-gray-300 hover:text-black duration-500 w-1/2 mt-5 mb-2" >Solicitar cotización</button>
+            <div className="w-full h-full bg-gray-300 pt-5">
+                <h1 className="text-center font-extrabold text-xl">¡Bienvenido a tu carrito de cotizacciones Deproinv!</h1>
+                <p className="text-xs text-center mb-10">(Para cotizaciones muy grandes, si lo prefiere, puede ponerse en contacto directamente con nosotros a travez de nuestro número telefónico)</p>
+                <div className="min-h-screen w-full">
+                    <div className="flex flex-col items-center justify-center w-full">
+                        {content}
+                    </div>
+                    <div className="flex w-full justify-center mt-10">
+                        <button onClick={senddingQuotation} className="bg-gray-600 text-white text-center rounded-md shadow-lg hover:bg-gray-300 hover:text-black duration-500 w-1/2 mt-5 mb-2" >Solicitar cotización</button>
+                    </div>
                 </div>
             </div>
             <Footer />
