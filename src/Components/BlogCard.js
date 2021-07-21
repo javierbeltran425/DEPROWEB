@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 const BlogCard = ({ title, content }) => {
     return(
         <>
@@ -7,7 +5,7 @@ const BlogCard = ({ title, content }) => {
                 <div className="flex flex-col w-full text-left mr-10 my-4 mx-10 items-start">
                     <h2 className="font-bold text-xl">{title}</h2>
                     <div>
-                        <p className="">{content}</p>
+                        <p className="text-justify">{content}</p>
                     </div>
                 </div>
             </div> 

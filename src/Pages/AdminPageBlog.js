@@ -14,6 +14,10 @@ const AdminPageBlog = () => {
     const isLogged = localStorage.getItem('token') != null
     var pTitle = useRef(null), pContent = useRef(null)
     var deleteTitle = useRef(null)
+    var uTitle = useRef(null)
+    var updateContent = useRef(null)
+
+    const [uContent, setUContent] = useState('')
 
     if(!isLogged)
         history.push('/')
@@ -51,6 +55,22 @@ const AdminPageBlog = () => {
             })
     })
 
+    const [ mutateUpdate, isLoadingUpdate  ] = useMutation(update => {
+        axios.put(process.env.REACT_APP_API_URL + 'blog/blog-update', update, {
+            headers: {"Content-Type": "application/json"}
+        })
+            .then(res => {
+                console.log(res.data)
+
+                if(res.status === 200)
+                    alert("Artículo actualizado")
+            })
+            .catch(({ response }) => {
+                alert("Algo salió mal")
+                console.log(response)
+            })
+    })
+
     function closeSesionClick(e) {
         e.preventDefault()
 
@@ -82,6 +102,50 @@ const AdminPageBlog = () => {
         console.log(data)
 
         mutateDelete(data)
+    }
+
+    async function search(e) {
+        e.preventDefault()
+
+        let petition = await axios.get(process.env.REACT_APP_API_URL + 'blog/blog-get-title?title=' + `${uTitle.current.value}`)
+
+        if(petition.error){
+            alert('Ocurrió un error')
+        }
+
+        console.log(petition.data.blog.content)
+
+        setUContent(petition.data.blog.content)
+
+        console.log("Impresion del uContent" + uContent)
+
+    }
+
+    function updateOnCLick(e) {
+        e.preventDefault()
+
+        if(uTitle.current.value == "" || updateContent.current.value == "")
+            alert('No se pueden dejar campos vacíos')
+        else{
+            var updateData = {
+                title: uTitle.current.value,
+                content: updateContent.current.value
+            }
+    
+            mutateUpdate(updateData)
+        }
+
+        
+
+        /*
+        axios.put(process.env.REACT_APP_API_URL + 'blog/blog-update', petitData)
+        .then(res => {
+            if( res.status === 200)
+                alert('Actículo actualizado')
+        })
+        .catch(({ response }) => {
+            alert("Ha ocurrido un error")
+        })*/
     }
 
     return(
@@ -134,16 +198,16 @@ const AdminPageBlog = () => {
                         <div className="flex flex-col w-full justify-center items-center">
                             <label className="mt-3 text-lg">Título</label>
                             <div className="flex flex-row">
-                                <input  type="text" className="my-3 border rounded shadow-md text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></input>
-                                <button onClick={uploadOnclick} className="m-5 lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-1000">Buscar</button>
+                                <input ref={uTitle} type="text" className="my-3 border rounded shadow-md text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></input>
+                                <button onClick={search} className="m-5 lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-1000">Buscar</button>
                             </div>
                         </div>
                         <div className="flex flex-col w-full justify-center items-center">
                             <label className="mt-3 text-lg">Contenido</label>
-                            <textarea  type="text" rows="15" className="my-3 border rounded shadow-lg text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></textarea>
+                            <textarea ref={updateContent} value={uContent} onChange={e => setUContent(e.target.value)} type="text" rows="15" className="my-3 border rounded shadow-lg text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></textarea>
                         </div>
                         <div className="flex justify-center w-full h-auto">
-                            <button onClick={uploadOnclick} className="m-5 lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-1000">Publicar</button>
+                            <button onClick={updateOnCLick} className="m-5 lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-1000">Publicar</button>
                         </div>
                     </div>
                 </div>
