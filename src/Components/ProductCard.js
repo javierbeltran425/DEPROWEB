@@ -49,7 +49,7 @@ const ProductCard = ({ title, img, desc, productID, maker, categ }) => {
         <>
         <div className="bg-white lg:w-1/4 h-1/3 overflow-hidden flex items-center rounded-lg shadow-md m-5 hover:shadow-xl transform hover:scale-105 duration-500">
             <img src={process.env.REACT_APP_BUCKET + img} alt="producto" className="w-1/3 h-auto m-5"/>
-            <div className="flex flex-col w-full text-sm md:text-base justify-end text-right mr-10 my-2 items-end">
+            <div className="flex flex-col w-full text-sm md:text-base justify-end text-right mr-10 my-2 items-end py-5">
                 <h3 className="font-bold">{title}</h3>
                 <div>
                     <p className="">{desc}</p>
