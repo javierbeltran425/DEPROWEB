@@ -109,7 +109,7 @@ const Products = () => {
                 <ProductsHeader />
             </div>
                 <div className="w-full flex flex-wrap">
-                    <div className="flex md:justify-around w-full text-white bg-transparent p-2 mt-20 md:mt-28 mb-5 overflow-x-auto md:overflow-visible ">
+                    <div className="flex md:justify-around items-center w-full text-white bg-transparent p-2 mt-20 md:mt-28 mb-5 overflow-x-auto md:overflow-visible ">
                         <p className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">Banner</p>
                         <p className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">Grainger</p>
                         <p className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">Lovato Electric</p>
