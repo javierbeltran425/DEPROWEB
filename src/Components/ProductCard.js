@@ -47,15 +47,17 @@ const ProductCard = ({ title, img, desc, productID, maker, categ }) => {
 
     return(
         <>
-        <div className="bg-white lg:w-1/4 h-1/3 overflow-hidden flex items-center rounded-lg shadow-md m-5 hover:shadow-xl transform hover:scale-105 duration-500">
-            <img src={process.env.REACT_APP_BUCKET + img} alt="producto" className="w-1/3 h-auto m-5"/>
-            <div className="flex flex-col w-full text-sm md:text-base justify-end text-right mr-10 my-2 items-end py-5">
-                <h3 className="font-bold">{title}</h3>
+        <div className="bg-white lg:w-1/4 min-h-1/3 md:h-1/3 overflow-hidden flex flex-col md:flex-row items-center rounded-lg shadow-md m-5 hover:shadow-xl transform hover:scale-105 duration-500">
+            <img src={process.env.REACT_APP_BUCKET + img} alt="producto" className="w-2/4 h-auto m-5"/>
+            <div className="flex flex-col w-full text-sm md:text-base my-2 overflow-y-auto">
+                <h3 className="font-bold px-5">{title}</h3>
                 <div>
-                    <p className="">{desc}</p>
-                    <p className="font-bold">Marca: {maker}</p>
+                    <p className="px-5">{desc}</p>
+                    <p className="font-bold px-5">Marca: {maker}</p>
                 </div>
+                <div className="w-full flex justify-center">
                 <a onClick={addQuotation} className="bg-gray-600 text-white text-center rounded-md shadow-lg hover:bg-gray-300 hover:text-black duration-500 w-1/2 mt-5 mb-2 cursor-pointer" >Cotizar</a>
+            </div>
             </div>
         </div>
         </>
