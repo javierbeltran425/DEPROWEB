@@ -1,6 +1,7 @@
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import ProductsHeader from '../Components/ProductsHeader'
 import Footer from '../Components/Footer'
@@ -9,7 +10,7 @@ import Whatsapp from '../resources/whatsappLogo.png'
 
 import axios from 'axios'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useAxiosGet } from '../Hooks/useAxiosGet'
 import { useAxiosPost } from '../Hooks/useAxiosPost'
@@ -17,9 +18,10 @@ import { useAxiosPost } from '../Hooks/useAxiosPost'
 import ProductCard from '../Components/ProductCard'
 
 const Products = () => {
-    const [ comp, setComp ] = useState(null)
+    const [ search, setSearch ] = useState('')
     const history = useHistory()
     const [page, setPage] = useState(1)
+    const [ searchContent, setSearchContent ] = useState(null)
 
     var category = localStorage.getItem('category')
     let auxData = {
@@ -55,19 +57,49 @@ const Products = () => {
     }
 
     if(!category){
-        if(petition.response != null){
-            content = petition.response.products.map(e => 
+        if(searchContent == null || search.length < 2){
+            if(petition.response != null){
+                content = petition.response.products.map(e => 
+                    <ProductCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
+                )
+            }
+        }else{
+            content = searchContent.map(e => 
                 <ProductCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
             )
         }
     }
 
     if(category){
-        if(petitionFilter.response != null){
-            content = petitionFilter.response.products.map(e => 
+        if(searchContent == null || search.length < 2){
+            if(petitionFilter.response != null){
+                content = petitionFilter.response.products.map(e => 
+                    <ProductCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
+                )
+            }
+        }else{
+            content = searchContent.map(e => 
                 <ProductCard title={`${e.name}`} img={`${e.productImg}`} desc={`${e.description}`} productID={e.productID} maker={e.maker} categ={e.category} />
             )
         }
+    }
+
+    const onChange = async e => {
+        e.persist();
+
+        await setSearch(e.target.value.toLowerCase())
+
+        filterElements()
+
+        console.log("Impresion de SearchContent: " + searchContent)  
+    }
+
+    const filterElements = () => {
+        var searchE = petition.response.products.filter(item =>{
+            if(item.name.toLowerCase().includes(search) || item.maker.toLowerCase().includes(search) || item.description.toLowerCase().includes(search))
+                return item
+        });
+        setSearchContent(searchE)
     }
 
     return(
@@ -85,8 +117,9 @@ const Products = () => {
                         <p className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">Disoric</p>
                         <p className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">Maruson</p>
                     </div>
-                    <div className="flex flex-col w-full justify-center items-center">
-                        {/*<input type="text" placeholder="Buscar..." className="my-3 border rounded shadow-lg text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></input>*/}
+                    <div className="flex flex-row w-full justify-center items-center">
+                        <input value={search} onChange={onChange} type="text" placeholder="Buscar..." className="my-3 border rounded shadow-lg text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></input>
+                        <Icon icon={faSearch} className="mx-3"/>
                     </div>
                     <div className="w-full min-h-screen flex flex-col lg:flex-row lg:flex-wrap justify-center">
                         {content}
