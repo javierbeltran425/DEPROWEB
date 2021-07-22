@@ -86,7 +86,7 @@ const Products = () => {
                         <p className="bg-gray-400 mx-2 md:mx-0 md:py-2 px-5 rounded-full hover:animate-wiggle shadow-lg">Maruson</p>
                     </div>
                     <div className="flex flex-col w-full justify-center items-center">
-                        <input type="text" placeholder="Buscar..." className="my-3 border rounded shadow-lg text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></input>
+                        {/*<input type="text" placeholder="Buscar..." className="my-3 border rounded shadow-lg text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></input>*/}
                     </div>
                     <div className="w-full min-h-screen flex flex-col lg:flex-row lg:flex-wrap justify-center">
                         {content}
