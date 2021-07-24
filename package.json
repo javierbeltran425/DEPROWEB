@@ -17,6 +17,7 @@
     "express-error-handler": "^1.1.0",
     "postcss": "^7.0.35",
     "react": "^17.0.1",
+    "react-country-region-selector": "^3.1.0",
     "react-dom": "^17.0.1",
     "react-query": "^2.26.4",
     "react-router-dom": "^5.2.0",
