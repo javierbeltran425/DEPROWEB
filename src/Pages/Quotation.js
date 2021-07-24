@@ -37,6 +37,16 @@ const Quotation = (actUser) => {
             })
     })
 
+    const [ mutateClientResponse, isLoadingClientResponse  ] = useMutation(quotation => {
+        axios.post(process.env.REACT_APP_API_URL + 'users/sendclientquotation', quotation)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(({ response }) => {
+                console.log(response)
+            })
+    })
+
     if(petition.error){
         alert('Ha ocurrido un error')
     }
@@ -85,6 +95,7 @@ const Quotation = (actUser) => {
             console.log("Cantidad: " + quotationData.amount)
             
             mutate(quotationData)
+            mutateClientResponse(quotationData)
         }
     }
 
