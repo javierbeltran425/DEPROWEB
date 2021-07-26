@@ -15,7 +15,7 @@ const Blog = () => {
 
     if(petition.response != null){
         content = petition.response.blog.map(e => 
-            <BlogCard title={`${e.title}`} content={`${e.content}`} />
+            <BlogCard title={`${e.title}`} content={`${e.content}`} image={`${e.image}`} />
         )
     }
 
