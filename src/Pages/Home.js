@@ -41,7 +41,7 @@ const Home = () => {
                     <div className="w-full h-screen bg-gradient-to-r from-gray-900 to-gray-700">
                         <BackDiv className="w-full h-screen opacity-20" />
                         <div className="absolute w-full h-screen bottom-0 text-justify flex flex-col justify-center items-center lg:flex-row">
-                            <img src={HomeLogo} className="lg:w-1/3"/>
+                            <img src={HomeLogo} className="lg:w-4/5"/>
                             <p className="hidden lg:inline text-8xl text-white overflow-hidden">|</p>
                             <p className="text-white text-sm p-5 md:text-2xl lg:p-8">"Deltas Proyectos e inversiones, una empresa apasionada y dedicada al manejo de proyectos solares, automatización, iluminación y equipos de protección eléctrica, entre otros."</p>
                         </div>
