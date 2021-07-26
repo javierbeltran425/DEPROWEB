@@ -79,17 +79,32 @@ const AdminPageBlog = () => {
         history.push('/')
     }
 
+    var selectedFile = null
+    const filesSelecterHandle = event => {
+        console.log(event.target.files[0])
+        selectedFile = event.target.files[0]
+        console.log(selectedFile)
+    }
+
     function uploadOnclick(e) {
         e.preventDefault()
 
-        var data = {
-            title: pTitle.current.value,
-            content: pContent.current.value
+        const fd = new FormData()
+
+        if(pTitle.current.value == "" || pContent.current.value == "" )
+        {
+            alert("No se deben dejar campos vacíos")
         }
+        else
+        {
+            fd.append('title', pTitle.current.value)
+            fd.append('content', pContent.current.value)
+            fd.append('image', selectedFile)
 
-        console.log(data)
+            console.log(selectedFile)
 
-        mutate(data)
+            mutate(fd)
+        }   
     }
 
     function deleteOnClick(e) {
@@ -113,40 +128,35 @@ const AdminPageBlog = () => {
             alert('Ocurrió un error')
         }
 
-        console.log(petition.data.blog.content)
-
         setUContent(petition.data.blog.content)
 
         console.log("Impresion del uContent" + uContent)
 
     }
 
+    var selectedFileUpdate = null
+    const filesSelecterHandleUpdate = event => {
+        console.log(event.target.files[0])
+        selectedFileUpdate = event.target.files[0]
+        console.log(selectedFileUpdate)
+    }
+
     function updateOnCLick(e) {
         e.preventDefault()
+
+        const fd = new FormData()
 
         if(uTitle.current.value == "" || updateContent.current.value == "")
             alert('No se pueden dejar campos vacíos')
         else{
-            var updateData = {
-                title: uTitle.current.value,
-                content: updateContent.current.value
-            }
+            fd.append('title', uTitle.current.value)
+            fd.append('content', updateContent.current.value)
+            fd.append('image', selectedFileUpdate)
     
-            mutateUpdate(updateData)
+            mutateUpdate(fd)
         }
-
-        
-
-        /*
-        axios.put(process.env.REACT_APP_API_URL + 'blog/blog-update', petitData)
-        .then(res => {
-            if( res.status === 200)
-                alert('Actículo actualizado')
-        })
-        .catch(({ response }) => {
-            alert("Ha ocurrido un error")
-        })*/
     }
+
 
     return(
         <>
@@ -170,6 +180,10 @@ const AdminPageBlog = () => {
                     <div className="flex flex-col w-full justify-center items-center">
                         <label className="mt-3 text-lg">Contenido</label>
                         <textarea ref={pContent} type="text" rows="32" className="my-3 border rounded shadow-lg text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></textarea>
+                    </div>
+                    <div className="flex flex-col w-full justify-center items-center">
+                        <label className="mt-3 text-lg">Imagen del artículo</label>
+                        <input type="file" onChange={filesSelecterHandle} className="my-3 border rounded shadow-md text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none"></input>
                     </div>
                     <div className="flex justify-center w-full h-auto">
                         <button onClick={uploadOnclick} className="m-5 lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-1000">Publicar</button>
@@ -205,6 +219,10 @@ const AdminPageBlog = () => {
                         <div className="flex flex-col w-full justify-center items-center">
                             <label className="mt-3 text-lg">Contenido</label>
                             <textarea ref={updateContent} value={uContent} onChange={e => setUContent(e.target.value)} type="text" rows="15" className="my-3 border rounded shadow-lg text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></textarea>
+                        </div>
+                        <div className="flex flex-col w-full justify-center items-center">
+                            <label className="mt-3 text-lg">Imagen del artículo</label>
+                            <input type="file" onChange={filesSelecterHandleUpdate} className="my-3 border rounded shadow-md text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none"></input>
                         </div>
                         <div className="flex justify-center w-full h-auto">
                             <button onClick={updateOnCLick} className="m-5 lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-1000">Publicar</button>
