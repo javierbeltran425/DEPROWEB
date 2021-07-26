@@ -114,8 +114,6 @@ const AdminPageBlog = () => {
             title: deleteTitle.current.value
         }
 
-        console.log(data)
-
         mutateDelete(data)
     }
 
@@ -193,7 +191,7 @@ const AdminPageBlog = () => {
                 <div className="flex flex-col">
                     <div className="w-4/5 h-auto bg-white m-10 rounded-xl">
                         <h1 className="text-center font-bold m-5 text-2xl">Eliminar publicación</h1>
-                        <p className="text-center px-5">Para eliminar una publicación solo debe ingresar el título del artículo que se desea borrar</p>
+                        <p className="text-center px-5">Para eliminar una publicación solo debe ingresar el título del artículo que se desea borrar.</p>
                         <div className="flex flex-col w-full justify-center items-center">
                             <label className="mt-3 text-lg">Título</label>
                             <input ref={deleteTitle} type="text" className="my-3 border rounded shadow-md text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></input>
