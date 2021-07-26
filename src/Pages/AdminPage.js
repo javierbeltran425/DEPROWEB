@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom'
 import Select from 'react-select'
 
 import AdminHeader from '../Components/AdminHeader'
+import Footer from '../Components/Footer'
 
 const AdminPage = () => {
     const history = useHistory()
@@ -168,6 +169,7 @@ const AdminPage = () => {
                 </div>
                 <button onClick={uploadOnclick} className="m-5 lg:mr-5 px-6 text-sm md:text-xl text-left lg:text-center lg:text-base text-white lg:shadow-lg lg:bg-gray-600 lg:rounded-full transform lg:hover:scale-110 hover:text-black lg:hover:bg-white motion-reduce:transform-none duration-1000">Subir producto</button>
             </div>
+            <Footer />
         </>
     );
 }
