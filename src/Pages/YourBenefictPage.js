@@ -52,7 +52,7 @@ const YourBenefictPage = () => {
 
                     <div className="flex grid-cols-2 items-center w-full min-h-screen mt-32 pb-20 pt-20 pl-10 bg-gray-500">
                         <div className="flex flex-col justify-center w-full h-full pl-20">
-                            <h2 className="text-4xl font-extrabold text-blue-300">Alcazaremos sus metas</h2>
+                            <h2 className="text-4xl font-extrabold text-blue-300">Alcanzaremos sus metas</h2>
                             <h3 className="text-2xl font-bold">Un paso a la vez</h3>
                         </div>
 
