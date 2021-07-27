@@ -82,12 +82,12 @@ const AdminSendEmail = () => {
 
                     <div className="flex flex-row w-full mt-5">
                         <label className="text-lg font-bold mt-3 ml-5">Asunto:</label>
-                        <input ref={subject} type="text" className="my-3 mx-5 w-full border rounded shadow-md text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none"></input>
+                        <input ref={subject} type="text" className="my-3 ml-2 w-5/6 border rounded shadow-md text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none"></input>
                     </div>
 
                     <div className="flex flex-col w-full mt-5 items-center">
                         <label className="text-lg font-bold mt-3">Cuerpo del correo</label>
-                        <textarea ref={content} type="text" rows="20" cols="105" className="my-3 border rounded shadow-md text-gray-600 px-2 py-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none"></textarea>
+                        <textarea ref={content} type="text" rows="20" className="my-3 w-5/6 border rounded shadow-md text-gray-600 px-2 py-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none"></textarea>
                     </div>
 
                     {/*<div className="flex flex-col w-full justify-center items-center">
