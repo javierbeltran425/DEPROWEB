@@ -11,6 +11,7 @@ import AboutUsPage from './Pages/AboutUsPage.js'
 import AdminPageBlog  from './Pages/AdminPageBlog.js'
 import AdminSendEmail from './Pages/AdminSendEmail.js'
 import AdminPageUpdate from './Pages/AdminPageUpdate.js'
+import YourBenefictPage from './Pages/YourBenefictPage.js'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/register-page' component={RegisterPage}/>
           <Route exact path='/admin-page-upload' component={AdminPage}/>
           <Route exact path='/admin-page-blog' component={AdminPageBlog}/>
+          <Route exact path='/your-benefict' component={YourBenefictPage}/>
           <Route exact path='/admin-send-email' component={AdminSendEmail}/>
           <Route exact path='/admin-page-update' component={AdminPageUpdate}/>
         </Switch>
