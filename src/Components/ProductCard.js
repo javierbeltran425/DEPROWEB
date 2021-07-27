@@ -48,8 +48,8 @@ const ProductCard = ({ title, img, desc, productID, maker, categ }) => {
     return(
         <>
         <div className="bg-white lg:w-1/4 min-h-1/3 md:h-1/3 overflow-hidden flex flex-col md:flex-row items-center rounded-lg shadow-md m-5 hover:shadow-xl transform hover:scale-105 duration-500">
-            <img src={process.env.REACT_APP_BUCKET + img} alt="producto" className="w-2/4 h-auto m-5"/>
-            <div className="flex flex-col w-full text-sm md:text-base my-2 overflow-y-auto">
+            <img src={process.env.REACT_APP_BUCKET + img} alt="producto" className="w-2/5 h-auto m-5"/>
+            <div className="flex flex-col w-full text-sm my-2 overflow-y-auto">
                 <h3 className="font-bold px-5">{title}</h3>
                 <div>
                     <p className="px-5">{desc}</p>
