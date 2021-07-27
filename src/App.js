@@ -8,8 +8,9 @@ import Products from './Pages/Products.js'
 import AdminPage from './Pages/AdminPage.js'
 import RegisterPage from './Pages/RegisterPage'
 import AboutUsPage from './Pages/AboutUsPage.js'
-import AdminPageUpdate from './Pages/AdminPageUpdate.js'
 import AdminPageBlog  from './Pages/AdminPageBlog.js'
+import AdminSendEmail from './Pages/AdminSendEmail.js'
+import AdminPageUpdate from './Pages/AdminPageUpdate.js'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/register-page' component={RegisterPage}/>
           <Route exact path='/admin-page-upload' component={AdminPage}/>
           <Route exact path='/admin-page-blog' component={AdminPageBlog}/>
+          <Route exact path='/admin-send-email' component={AdminSendEmail}/>
           <Route exact path='/admin-page-update' component={AdminPageUpdate}/>
         </Switch>
       </Router>
