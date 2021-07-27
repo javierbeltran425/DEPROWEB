@@ -50,39 +50,47 @@ const YourBenefictPage = () => {
 
                     </div>
 
-                    <div className="flex grid-cols-2 items-center w-full min-h-screen mt-32 pb-20 pt-20 pl-10 bg-gray-500">
-                        <div className="flex flex-col justify-center w-full h-full pl-20">
+                    <div className="flex grid-cols-2 justify-center items-center w-full min-h-screen mt-32 pb-20 pt-20 pl-10 bg-gray-500">
+                        <div className="flex flex-col justify-center w-full h-full ml-20">
                             <h2 className="text-4xl font-extrabold text-blue-300">Alcanzaremos sus metas</h2>
                             <h3 className="text-2xl font-bold">Un paso a la vez</h3>
                         </div>
 
-                        <div className="flex flex-col justify-center items-center w-full h-full pr-20">
-                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 my-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
+                        <div className="flex flex-row flex-wrap justify-center items-center w-full h-full mt-10 mr-20">
+                            <div className="flex justify-center w-full">
+                                <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 m-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
+                                    <p className="text-center font-bold">CALIDAD </p>
+                                </div>
+                            </div>
+                            
+                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 m-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
                                 <p className="text-center font-bold">CONOCIMIENTO </p>
                             </div>
 
-                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 my-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
-                                <p className="text-center font-bold">CONDIANZA</p>
+                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 m-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
+                                <p className="text-center font-bold">CONFIANZA</p>
                             </div>
 
-                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 my-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
+                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 m-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
                                 <p className="text-center font-bold">IDEAS</p>
                             </div>
 
-                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 my-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
+                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 m-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
                                 <p className="text-center font-bold">SOPORTE</p>
                             </div>
 
-                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 my-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
+                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 m-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
                                 <p className="text-center font-bold">FLEXIBILIDAD</p>
                             </div>
 
-                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 my-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
+                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 m-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
                                 <p className="text-center font-bold">DISPONIBILIDAD</p>
                             </div>
 
-                            <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 my-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
-                                <p className="text-center font-bold">FIABILIDAD</p>
+                            <div className="flex justify-center w-full">
+                                <div className="hover:animate-pulse ring-2 ring-blue-600 w-1/3 h-auto bg-white p-5 m-5 rounded-full shadow-md hover:shadow-lg transform hover:scale-110 duration-500">
+                                    <p className="text-center font-bold">FIABILIDAD</p>
+                                </div>
                             </div>
                         </div>
                     </div>
