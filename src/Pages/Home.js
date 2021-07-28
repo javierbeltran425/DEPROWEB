@@ -12,6 +12,7 @@ import SineTimer from '../resources/Brands/sinetamer.png'
 import Disoric from '../resources/Brands/disoric.png'
 import Maruson from '../resources/Brands/maruson.png'
 import HomeLogo from '../resources/depro_log2.png'
+import Background from '../images/background.jpg'
 
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
@@ -47,10 +48,10 @@ const Home = () => {
                             <p className="text-white text-sm p-5 md:text-2xl lg:p-8 text-center">"Deltas Proyectos e inversiones, una empresa apasionada y dedicada al manejo de proyectos solares, automatización, iluminación y equipos de protección eléctrica, entre otros."</p>
                         </div>
                     </div>
-                    <div className="flex flex-wrap w-full bg-gray-300">
+                    <div className="flex flex-wrap w-full" style={{ backgroundImage: `url(${Background})`}} >
                         <div className="w-full text-black text-center ">
-                            <p className="text-3xl font-bold p-1 mt-5">MARCAS EN DISTRIBUCIÓN OFICIAL</p>
-                            <p className="mb-5 text-black">__________</p>
+                            <p className="text-3xl font-extrabold p-1 mt-5 text-white">MARCAS EN DISTRIBUCIÓN OFICIAL</p>
+                            <p className="mb-5 text-white font-bold">________________________________</p>
                         </div>
                         <div className="flex justify-center lg:justify-start">
                             <CompaniesCard title={"BANNER ENGINEERING CORPORATION"} img={BannerPic} msg={
