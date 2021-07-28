@@ -12,7 +12,7 @@ const AboutUsPage = () => {
             <div className="fixed w-full flex flex-wrap z-10">
                 <Header />
             </div>
-            <h1 className="text-center font-bold md:text-2xl mt-40">BIENVENIDOS A DELTAS PROYECTOS E INVERSIONES SA DE CV</h1>
+            <h1 className="text-center font-bold md:text-2xl pt-40">BIENVENIDOS A DELTAS PROYECTOS E INVERSIONES SA DE CV</h1>
             <h5 className="text-center">DESDE 1996</h5>
 
             <div className="flex w-full flex-col md:flex-row md:grid-cols-2">
