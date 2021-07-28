@@ -27,6 +27,11 @@ const AdminHeader = () => {
         history.push('/admin-send-email')
     }
 
+    function PostWork(e) {
+        e.preventDefault()
+        history.push('/admin-works')
+    }
+
     return(
         <>
         <header className="flex justify-around bg-gray-400 w-full h-1/2">
@@ -34,6 +39,7 @@ const AdminHeader = () => {
             <button onClick={ClickUpdate} className="h-16 p-5 w-full text-white font-bold hover:bg-gray-200 hover:text-black duration-500">Actualizar productos</button>
             <button onClick={ClickEditBlog} className="h-16 p-5 w-full text-white font-bold hover:bg-gray-200 hover:text-black duration-500">Editar Blog</button>
             <button onClick={ClickSendEmail} className="h-16 p-5 w-full text-white font-bold hover:bg-gray-200 hover:text-black duration-500">Enviar ofertas o notificaciones</button>
+            <button onClick={PostWork} className="h-16 p-5 w-full text-white font-bold hover:bg-gray-200 hover:text-black duration-500">Publicar trabajos</button>
         </header>
         </>
     )
