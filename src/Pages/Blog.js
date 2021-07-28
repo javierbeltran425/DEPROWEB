@@ -21,10 +21,13 @@ const Blog = () => {
 
     return(
         <>
-            <Header />
-                <div className="w-full min-h-screen bg-gray-300">
-                    <h1 className="text-center text-3xl font-bold p-5">¡Bienvenido a nuestro Blog!</h1>
-                    <p className="text-center">Aquí te presentamos las últimas noticias hacerca de la industria</p>
+        
+            <div className="fixed flex flex-wrap top-0 z-20">
+                <Header />
+            </div>
+                <div className="w-full min-h-screen bg-gray-300 pt-40">
+                    <h1 className="text-center text-3xl font-bold px-5">¡Bienvenido a nuestro Blog!</h1>
+                    <p className="text-center mb-10">Aquí te presentamos las últimas noticias hacerca de la industria</p>
                     <div wrap="hard" className="flex flex-col w-full h-auto items-center">
                        {content}
                     </div>

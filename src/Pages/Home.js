@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Header from '../Components/Header'
+import Header from '../Components/HomeHeader'
 import Footer from '../Components/Footer'
 import CompaniesCard from '../Components/CompaniesCard'
 
@@ -14,6 +14,8 @@ import Maruson from '../resources/Brands/maruson.png'
 import HomeLogo from '../resources/depro_log2.png'
 import Background from '../images/background.jpg'
 
+import VideoBg from '../images/DeproinvVideo.mp4'
+
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 
@@ -25,6 +27,7 @@ const BackDiv = styled.div`
 
 const Home = () => {
     const history = useHistory()
+    const videoSource = "https://www.youtube.com/watch?v=7EO6j_3rLok"
     
     axios.get('https://deproapi.herokuapp.com/users/my-info', {
         headers: { Authorize: localStorage.getItem('token') }
@@ -41,11 +44,17 @@ const Home = () => {
             <div className="fixed flex flex-wrap z-10">
                 <Header />
             </div>
-                    <div className="w-full h-screen bg-gradient-to-r from-gray-900 to-gray-700">
-                        <BackDiv className="w-full h-screen opacity-20" />
-                        <div className="absolute w-full h-screen bottom-0 text-justify flex flex-col justify-center items-center">
-                            <img src={HomeLogo} className="lg:w-2/4"/>
-                            <p className="text-white text-sm p-5 md:text-2xl lg:p-8 text-center">"Deltas Proyectos e inversiones, una empresa apasionada y dedicada al manejo de proyectos solares, automatización, iluminación y equipos de protección eléctrica, entre otros."</p>
+                    <div className="bg-black">
+                        <video className="w-full h-screen hidden md:inline" autoPlay loop muted>
+                            <source src={VideoBg} type="video/mp4" />
+                        </video>
+
+
+                        <div className="w-full h-screen bg-gray-600 md:hidden">
+                            <div className="absolute w-full h-screen bottom-0 text-justify flex flex-col justify-center items-center">
+                                <img src={HomeLogo} className="lg:w-2/4"/>
+                                <p className="text-white text-sm p-5 md:text-2xl lg:p-8 text-center">"Deltas Proyectos e inversiones, una empresa apasionada y dedicada al manejo de proyectos solares, automatización, iluminación y equipos de protección eléctrica, entre otros."</p>
+                            </div>
                         </div>
                     </div>
                     <div className="flex flex-wrap w-full" style={{ backgroundImage: `url(${Background})`}} >
