@@ -14,8 +14,6 @@ import Maruson from '../resources/Brands/maruson.png'
 import HomeLogo from '../resources/depro_log2.png'
 import Background from '../images/background.jpg'
 
-import VideoBg from '../images/DeproinvVideo.mp4'
-
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 
@@ -27,7 +25,7 @@ const BackDiv = styled.div`
 
 const Home = () => {
     const history = useHistory()
-    const videoSource = "https://www.youtube.com/watch?v=7EO6j_3rLok"
+    const videoSource = process.env.REACT_APP_BUCKET + "videos/DeproinvVideo.mp4"
     
     axios.get('https://deproapi.herokuapp.com/users/my-info', {
         headers: { Authorize: localStorage.getItem('token') }
@@ -46,7 +44,7 @@ const Home = () => {
             </div>
                     <div className="bg-black">
                         <video className="w-full h-screen hidden md:inline" autoPlay loop muted>
-                            <source src={VideoBg} type="video/mp4" />
+                            <source src={videoSource} type="video/mp4" />
                         </video>
 
 
