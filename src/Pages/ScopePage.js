@@ -7,7 +7,7 @@ import Whatsapp from '../resources/whatsappLogo.png'
 const ScopePage = () => {
     return(
         <>
-            <div className="fixed flex flex-wrap top-0 z-20">
+            <div className="fixed w-full flex flex-wrap z-10">
                 <Header />
             </div>
             <div style={{ backgroundImage: `url(${Earth})` }} className="flex grid-cols-2 justify-center items-center w-full min-h-screen">

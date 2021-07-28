@@ -101,7 +101,9 @@ const Quotation = (actUser) => {
 
     return (
         <>
-            <Header />
+            <div className="fixed w-full flex flex-wrap z-10">
+                <Header />
+            </div>
             <div className="w-full h-full bg-gray-300 pt-5">
                 <h1 className="text-center font-extrabold text-xl">¡Bienvenido a tu carrito de cotizacciones Deproinv!</h1>
                 <p className="text-xs text-center mb-10">(Para cotizaciones muy grandes, si lo prefiere, puede ponerse en contacto directamente con nosotros a travez de nuestro número telefónico)</p>

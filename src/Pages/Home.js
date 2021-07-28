@@ -39,7 +39,7 @@ const Home = () => {
 
     return(
         <>
-            <div className="fixed flex flex-wrap z-10">
+            <div className="fixed w-full flex flex-wrap z-10">
                 <Header />
             </div>
                     <div className="bg-black">
