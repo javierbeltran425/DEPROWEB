@@ -12,6 +12,7 @@ import AdminPageBlog  from './Pages/AdminPageBlog.js'
 import AdminSendEmail from './Pages/AdminSendEmail.js'
 import AdminPageUpdate from './Pages/AdminPageUpdate.js'
 import YourBenefictPage from './Pages/YourBenefictPage.js'
+import ScopePage from './Pages/ScopePage.js'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/' component={Home}/>
           <Route exact path='/blog' component={Blog}/>
           <Route exact path='/products' component={Products}/>
+          <Route exact path='/scope' component={ScopePage}/>
           <Route excat path='/quotation' component={Quotation}/>
           <Route exact path='/login-page' component={LoginPage}/>
           <Route excat path='/about-us' component ={AboutUsPage}/>
