@@ -6,13 +6,15 @@ import Quotation from './Pages/Quotation'
 import LoginPage from './Pages/LoginPage'
 import Products from './Pages/Products.js'
 import AdminPage from './Pages/AdminPage.js'
+import ScopePage from './Pages/ScopePage.js'
 import RegisterPage from './Pages/RegisterPage'
 import AboutUsPage from './Pages/AboutUsPage.js'
 import AdminPageBlog  from './Pages/AdminPageBlog.js'
 import AdminSendEmail from './Pages/AdminSendEmail.js'
 import AdminPageUpdate from './Pages/AdminPageUpdate.js'
 import YourBenefictPage from './Pages/YourBenefictPage.js'
-import ScopePage from './Pages/ScopePage.js'
+import Works from './Pages/Works.js'
+import AdminPageWorks from './Pages/AdminPageWorks.js'
 
 function App() {
   return (
@@ -21,8 +23,8 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/blog' component={Blog}/>
-          <Route exact path='/products' component={Products}/>
           <Route exact path='/scope' component={ScopePage}/>
+          <Route exact path='/products' component={Products}/>
           <Route excat path='/quotation' component={Quotation}/>
           <Route exact path='/login-page' component={LoginPage}/>
           <Route excat path='/about-us' component ={AboutUsPage}/>
@@ -32,6 +34,8 @@ function App() {
           <Route exact path='/your-benefict' component={YourBenefictPage}/>
           <Route exact path='/admin-send-email' component={AdminSendEmail}/>
           <Route exact path='/admin-page-update' component={AdminPageUpdate}/>
+          <Route exact path='/works' component={Works}/>
+          <Route exact path='/admin-works' component={AdminPageWorks}/>
         </Switch>
       </Router>
     </>

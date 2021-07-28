@@ -52,8 +52,7 @@ const HomeHeader = () => {
 
     function ourWorksClick(e){
         e.preventDefault()
-
-        alert("Estimado cliente \n esta función aún no se encuentra disponible")
+        history.push('/works')
     }
 
     function aboutUsClick(e) {
