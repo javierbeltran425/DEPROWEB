@@ -9,8 +9,10 @@ import Social from '../images/Social.jpg'
 const AboutUsPage = () => {
     return(
         <>
-            <Header />
-            <h1 className="text-center font-bold md:text-2xl mt-10">BIENVENIDOS A DELTAS PROYECTOS E INVERSIONES SA DE CV</h1>
+            <div className="fixed flex flex-wrap top-0 z-20">
+                <Header />
+            </div>
+            <h1 className="text-center font-bold md:text-2xl mt-40">BIENVENIDOS A DELTAS PROYECTOS E INVERSIONES SA DE CV</h1>
             <h5 className="text-center">DESDE 1996</h5>
 
             <div className="flex w-full flex-col md:flex-row md:grid-cols-2">

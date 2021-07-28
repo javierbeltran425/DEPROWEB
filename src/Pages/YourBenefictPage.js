@@ -8,8 +8,10 @@ import Practicidad from '../images/practicidad.jpg'
 const YourBenefictPage = () => {
     return (
         <>
-            <Header />
-                <div className="w-full min-h-screen bg-gray-300">
+            <div className="fixed flex flex-wrap top-0 z-20">
+                <Header />
+            </div>
+                <div className="w-full min-h-screen bg-gray-300 pt-32">
                     <h1 className="text-center text-4xl p-10 font-extrabold text-blue-600">¡EN DEPROINV NUESTRA INSPIRACIÓN ERES TÚ!</h1>
                     <p className="text-justify px-10">
                         Deseamos poder poner su disposición los mejores productos y las 
