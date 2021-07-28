@@ -8,7 +8,7 @@ import Practicidad from '../images/practicidad.jpg'
 const YourBenefictPage = () => {
     return (
         <>
-            <div className="fixed flex flex-wrap top-0 z-20">
+            <div className="fixed w-full flex flex-wrap z-10">
                 <Header />
             </div>
                 <div className="w-full min-h-screen bg-gray-300 pt-32">

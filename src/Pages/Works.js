@@ -21,11 +21,11 @@ const Works = () => {
 
     return(
         <>
-            <div className="fixed flex flex-wrap top-0 z-20">
+            <div className="fixed w-full flex flex-wrap z-10">
                 <Header />
             </div>
             <div className="w-full min-h-screen bg-gray-300">
-                <h1 className="text-center text-4xl underline font-extrabold pt-40 mb-10">Algunos de nuestros trabajos</h1>
+                <h1 className="text-center text-xl md:text-4xl underline font-extrabold pt-24 md:pt-40 mb-10">Algunos de nuestros trabajos</h1>
                 <div wrap="hard" className="flex flex-col w-full h-auto items-center">
                        {content}
                 </div>
