@@ -43,7 +43,7 @@ const Home = () => {
                 <Header />
             </div>
                     <div className="bg-black">
-                        <video className="w-full h-screen hidden md:inline" autoPlay loop muted>
+                        <video className="w-full h-screen hidden md:inline" autoPlay loop>
                             <source src={videoSource} type="video/mp4" />
                         </video>
 
