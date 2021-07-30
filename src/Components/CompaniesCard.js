@@ -4,7 +4,7 @@ const CompaniesCard = ({ title, img, msg }) => {
             <img src={img} alt="" className="lg:w-3/12 p-5 m-2" />
             <div className="flex flex-col">
                 <h1 className="text-center text-white font-extrabold p-1 mt-2 text-xl">{title}</h1>
-                <p className="text-sm text-center lg:text-right p-5 lg:mr-20 font-semibold text-white">{msg}</p>
+                <p className="text-lg text-center lg:text-right p-5 lg:mr-20 font-semibold text-white">{msg}</p>
             </div>
         </div>
     )

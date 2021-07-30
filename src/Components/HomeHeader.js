@@ -104,7 +104,7 @@ const HomeHeader = () => {
         content = 
         <div className="flex flex-row mr-2 w-full justify-between text-white text-xs md:text-base items-center">
             <div className="hidden md:inline px-4">
-                <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>LA EMPRESA</a>
+                <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>QUIENES SOMOS</a>
             </div>
             <div className="flex md:flex-row items-center">
                 <Icon icon={faPhoneAlt} className="text-blue-300 m-2"/>
@@ -130,7 +130,7 @@ const HomeHeader = () => {
         content = 
         <div className="flex flex-row mr-2 w-full justify-between text-white text-xs md:text-base items-center">
             <div className="hidden md:inline px-4">
-                <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>LA EMPRESA</a>
+                <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>QUIENES SOMOS</a>
             </div>
             <div className="flex md:flex-row items-center">
                 <Icon icon={faPhoneAlt} className="text-blue-300 m-2"/>
