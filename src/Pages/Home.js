@@ -2,6 +2,9 @@ import styled from 'styled-components'
 import Header from '../Components/HomeHeader'
 import Footer from '../Components/Footer'
 import CompaniesCard from '../Components/CompaniesCard'
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
+
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 import banner from '../resources/banner.jpg'
 import BannerPic from '../resources/Brands/Banner.png'
@@ -43,11 +46,11 @@ const Home = () => {
             <div className="fixed w-full flex flex-wrap z-10">
                 <Header />
             </div>
-                    <div className="bg-black">
+                    <div className="flex justify-center bg-black">
+                        <Icon icon={faArrowDown} className="absolute bottom-0 text-blue-300 text-5xl m-2 animate-bounce"/>
                         <video className="w-full h-screen hidden md:inline" autoPlay loop>
                             <source src={videoSource} type="video/mp4" />
                         </video>
-
 
                         <div className="w-full h-screen bg-gray-600 md:hidden">
                             <div className="absolute w-full h-screen bottom-0 text-justify flex flex-col justify-center items-center">
@@ -85,7 +88,6 @@ const Home = () => {
                                 <p>
                                     Durante más de 90 años, LOVATO Electric ha estado diseñando y fabricando componentes eléctricos de baja tensión para aplicaciones industriales.<br/><br/>
                                     En 1992 LOVATO Electric fue una de las primeras empresas Italianas en obtener la certificación ISO 9001, ofreciendo más de 18.000 productos que cumplen con los más estrictos requisitos de homologación internacional.<br/><br/>
-                                    Disyuntores magneto-térmicos, contactores, pulsadores, interruptores de paquete, finales de carrera, multímetros digitales, medidores de energía, arrancadores suaves, seccionadores en carga, reguladores automáticos de corrección del factor de potencia y unidades de control para grupo electrógeno, son sólo algunos de los productos diseñados y construidos por LOVATO Electric.
                                 </p>
                             }/>
                         </div>
@@ -93,20 +95,17 @@ const Home = () => {
                         <div className="flex justify-center lg:justify-end">
                             <CompaniesCard title={"DI-SORIC"} img={Disoric} msg={<p>
                                 Disoric especializado en automatización industrial durante casi 40 años. Desarrollamos, fabricamos y comercializamos un amplio espectro de sensores innovadores, componentes de procesamiento de imágenes de alto rendimiento, máquinas LED de alta calidad e iluminación de señales, así como productos del área de tecnología de seguridad. Nuestra amplia gama de productos se completa con nuestra flexibilidad para soluciones específicas para el cliente. <br/><br/>
-                                Nuestros productos se utilizan principalmente en las áreas de ensamblaje y manipulación, sistemas robóticos, embalaje y medición y prueba. Y aquí nos centramos en las industrias automotriz, de alimentos y bebidas, farmacéutica, cosmética y electrónica.
                             </p>}/>
                         </div>
                         <div className="flex justify-center lg:justify-start">
                             <CompaniesCard title={"MARUSON"} img={Maruson} msg={<p>
                                 Se ha convertido en una potencia en el diseño y fabricación de productos de gestión de energía para satisfacer las necesidades de todos los tipos de consumidores. Desde hogares hasta centros de datos y soluciones empresariales, Maruson proporciona sistemas de respaldo de batería de suministro de energía ininterrumpida (UPS) de calidad, unidades de distribución de energía (PDU), reguladores automáticos de voltaje (AVR), sistemas de almacenamiento de energía (ESS), inversores y más para ofrecer. una cartera completa de productos de gestión de energía. <br/><br/>
-                                La preparación es la clave para que las operaciones sigan avanzando. Los cortes de energía debido a tormentas, cortes de la red eléctrica o accidentes son impredecibles. Maruson tiene casi todo lo que necesita para darle suficiente energía a sus dispositivos electrónicos conectados críticos para capear la tormenta.
                             </p>}/>
                         </div>
                         <div className="flex justify-center lg:justify-end">
                             <CompaniesCard title={"GRAINGER"} img={GraingerPic} msg={
                                 <p>
                                     Grainger Inc., referida como Grainger Industrial Supply, con sede en Chicago, Illinois, en los Estados Unidos, fue fundada en 1927 con el propósito de atender el mercado industrial, comercial e institucional de material indirecto. Al día de hoy, Grainger Industrial Supply cuenta con más de 590 sucursales en Norte América y Latinoamérica y efectúa ventas por arriba de los $9.4 billones de dólares.<br/><br/>
-                                    Grainger cuenta con una cadena de suministro que involucra a todo un equipo de personas que diariamente se aseguran de proveer los productos que demanda el país. Esta cadena, se abastece de centros de distribución que van desde Chicago, pasando por Carolina del Sur, Kansas City hasta nuestro centro de reprocesamiento ubicado en Roanoke, Texas.
                                 </p>
                             }/>
                         </div>
