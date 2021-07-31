@@ -2,6 +2,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faMapMarker } from '@fortawesome/free-solid-svg-icons'
 
 import Deproinv from '../resources/depro_logo.png'
 
@@ -19,6 +20,7 @@ const Footer = () => {
                 <a href="https://www.facebook.com/deproinv"><Icon icon={faFacebook} className="text-white text-3xl m-2 hover:text-blue-600 duration-500"/></a>
                 <Icon icon={faInstagram} className="text-white text-3xl m-2 hover:text-red-500 duration-500"/>
                 <a href="https://www.linkedin.com/company/deltas-proyectos-e-inversiones-sa-de-cv"><Icon icon={faLinkedin} className="text-white text-3xl m-2 hover:text-blue-600 duration-500"/></a>
+                <a href="https://maps.google.com/?cid=15774453259933002183&entry=gps"><Icon icon={faMapMarker} className="animate-bounce text-white text-3xl m-2 hover:text-red-600 duration-500"/></a>
             </div>
         </div>
     )
