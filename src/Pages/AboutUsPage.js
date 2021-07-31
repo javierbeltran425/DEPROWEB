@@ -12,10 +12,12 @@ const AboutUsPage = () => {
             <div className="fixed w-full flex flex-wrap z-10">
                 <Header />
             </div>
-            <h1 className="text-center font-bold md:text-2xl pt-40">BIENVENIDOS A DELTAS PROYECTOS E INVERSIONES SA DE CV</h1>
-            <h5 className="text-center">DESDE 1996</h5>
+            <div className="flex flex-col w-full bg-gray-300">
+                <h1 className="text-center font-bold md:text-2xl pt-40">BIENVENIDOS A DELTAS PROYECTOS E INVERSIONES SA DE CV</h1>
+                <h5 className="text-center">DESDE 1996</h5>
+            </div>
 
-            <div className="flex w-full flex-col md:flex-row md:grid-cols-2">
+            <div className="flex w-full flex-col md:flex-row md:grid-cols-2 bg-gray-300">
                 <div className="m-16">
                     <h3 className="font-bold text-center">MISION</h3>
                     <p className="font-normal text-justify md:px-32">
@@ -32,7 +34,7 @@ const AboutUsPage = () => {
                 </div>
             </div>
 
-            <div className="flex w-full flex-col md:flex-row md:grid-cols-2">
+            <div className="flex w-full flex-col md:flex-row md:grid-cols-2 bg-gray-300">
                 <div className="hidden md:inline m-16 md:w-5/6 md:h-5/6">
                     <img src={Vision} />
                 </div>
@@ -50,7 +52,7 @@ const AboutUsPage = () => {
                 </div>
             </div>
 
-            <div className="flex w-full flex-col md:flex-row md:grid-cols-2">
+            <div className="flex w-full flex-col md:flex-row md:grid-cols-2 bg-gray-300">
                 <div className="flex flex-col justify-center md:m-16">
                     <h3 className="font-bold text-center">Nuestros valores</h3>
                     <p className="font-normal text-justify px-32">
@@ -71,7 +73,7 @@ const AboutUsPage = () => {
                 </div>
             </div>
 
-            <div className="flex w-full flex-col md:flex-row md:grid-cols-2">
+            <div className="flex w-full flex-col md:flex-row md:grid-cols-2 bg-gray-300">
                 <div className="hidden md:inline flex w-full md:m-16 justify-center md:justify-start">
                     <img className="w-3/4" src={Social} />
                 </div>
@@ -90,7 +92,7 @@ const AboutUsPage = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col items-center m-20">
+            <div className="flex flex-col items-center p-20 bg-gray-300">
                 <h4 className="text-center font-extrabold text-3xl">¿Por qué somos diferentes?</h4>
                 <p className="text-center mt-5 font-semibold">
                     Calidad <br />

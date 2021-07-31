@@ -24,7 +24,7 @@ import Whatsapp from '../resources/whatsappLogo.png'
 
 const BackDiv = styled.div`
     background: url(${Background});
-    background-size: cover;
+    
 `
 
 const Home = () => {
