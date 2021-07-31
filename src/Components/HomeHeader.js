@@ -106,13 +106,9 @@ const HomeHeader = () => {
             <div className="hidden md:inline px-4">
                 <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>QUIENES SOMOS</a>
             </div>
-            <div className="flex md:flex-row items-center">
+            <div className="flex md:hidden md:flex-row items-center">
                 <Icon icon={faPhoneAlt} className="text-blue-300 m-2"/>
                 <p className="px-2"><a href="tel:+50322524892">2252-4892</a></p>
-            </div>
-            <div className="hidden md:flex md:flex-row md:items-center">
-                <Icon icon={faClock} className="text-blue-300"/>
-                <p className="px-1">HORARIOS DE ATENCIÓN: LUNES A VIERNES 8AM - 6PM </p>
             </div>
             <div className="flex flex-row items-center">
                 <div className="flex flex-row items-center px-4">
@@ -132,13 +128,9 @@ const HomeHeader = () => {
             <div className="hidden md:inline px-4">
                 <a className="hover:text-blue-300 duration-500 px-1 cursor-pointer" onClick={aboutUsClick}>QUIENES SOMOS</a>
             </div>
-            <div className="flex md:flex-row items-center">
+            <div className="flex md:hidden md:flex-row items-center">
                 <Icon icon={faPhoneAlt} className="text-blue-300 m-2"/>
                 <p className="px-2"><a href="tel:+50322524892">2252-4892</a></p>
-            </div>
-            <div className="hidden md:flex md:flex-row md:items-center">
-                <Icon icon={faClock} className="text-blue-300"/>
-                <p className="px-1">HORARIOS DE ATENCIÓN: LUNES A VIERNES 8AM - 6PM </p>
             </div>
             <div className="flex flex-row items-center">
                 <p className="px-4">Bienvenido</p>
