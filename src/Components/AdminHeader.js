@@ -32,9 +32,15 @@ const AdminHeader = () => {
         history.push('/admin-works')
     }
 
+    function homeOnClick(e) {
+        e.preventDefault()
+        history.push('/')
+    }
+
     return(
         <>
         <header className="flex justify-around bg-gray-400 w-full h-1/2">
+            <button onClick={homeOnClick} className="h-16 p-5 w-full text-white font-bold hover:bg-gray-200 hover:text-black duration-500">HOME</button>
             <button onClick={ClickUpload} className="h-16 p-5 w-full text-white font-bold hover:bg-gray-200 hover:text-black duration-500">Subir productos</button>
             <button onClick={ClickUpdate} className="h-16 p-5 w-full text-white font-bold hover:bg-gray-200 hover:text-black duration-500">Actualizar productos</button>
             <button onClick={ClickEditBlog} className="h-16 p-5 w-full text-white font-bold hover:bg-gray-200 hover:text-black duration-500">Editar Blog</button>

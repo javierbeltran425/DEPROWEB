@@ -31,6 +31,7 @@ const Home = () => {
     const history = useHistory()
     const videoSource = process.env.REACT_APP_BUCKET + "videos/DeproinvVideo.mp4"
     
+    /*
     axios.get('https://deproapi.herokuapp.com/users/my-info', {
         headers: { Authorize: localStorage.getItem('token') }
     })
@@ -40,6 +41,7 @@ const Home = () => {
                 history.push('/admin-page-upload')
         }
     })
+    */
 
     return(
         <>
