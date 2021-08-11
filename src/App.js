@@ -15,6 +15,7 @@ import AdminPageUpdate from './Pages/AdminPageUpdate.js'
 import YourBenefictPage from './Pages/YourBenefictPage.js'
 import Works from './Pages/Works.js'
 import AdminPageWorks from './Pages/AdminPageWorks.js'
+import Services from './Pages/Services.js'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route exact path='/admin-page-update' component={AdminPageUpdate}/>
           <Route exact path='/works' component={Works}/>
           <Route exact path='/admin-works' component={AdminPageWorks}/>
+          <Route exact path='/services' component={Services}/>
         </Switch>
       </Router>
     </>

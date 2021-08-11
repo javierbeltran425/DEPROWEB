@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-row items-center justify-center">
                 <Icon icon={faClock} className="hidden md:inline text-blue-300 mr-2"/>
-                <p className="px-1 text-white text-center">HORARIOS DE ATENCIÓN: LUNES A VIERNES 8AM - 6PM </p>
+                <p className="px-1 text-white text-center">HORARIOS DE ATENCIÓN: LUNES A VIERNES 8AM - 5PM </p>
             </div>
         </div>
     )

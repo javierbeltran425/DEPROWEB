@@ -47,7 +47,7 @@ const Header = () => {
     function servicesClick(e){
         e.preventDefault()
 
-        alert("Estimado cliente \n esta función aún no se encuentra disponible")
+        history.push('/services')
     }
 
     function ourWorksClick(e){

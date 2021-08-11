@@ -28,6 +28,7 @@ const Products = () => {
         category: category
     }
 
+    /*
     axios.get(process.env.REACT_APP_API_URL + 'users/my-info', {
         headers: { Authorize: localStorage.getItem('token') }
     })
@@ -35,7 +36,8 @@ const Products = () => {
         if( res.data.user.admin ) 
             history.push('/admin-page-upload')
     })
-
+    */
+   
     let petition = useAxiosGet(process.env.REACT_APP_API_URL + 'products?page=' + page)
 
     let petitionFilter = useAxiosPost(process.env.REACT_APP_API_URL + 'products/product-category?page=' + page, auxData)
