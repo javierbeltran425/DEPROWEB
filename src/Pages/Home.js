@@ -62,7 +62,7 @@ const Home = () => {
                             <source src={videoSource} type="video/mp4" />
                         </video>
                         */}
-                        <BackDivHome className="w-full h-screen"/>
+                        <BackDivHome className="w-full h-screen hidden md:inline"/>
                         <div className="w-full h-screen bg-gray-600 md:hidden">
                             <div className="absolute w-full h-screen bottom-0 text-justify flex flex-col justify-center items-center">
                                 <img src={HomeLogo} className="lg:w-2/4"/>
