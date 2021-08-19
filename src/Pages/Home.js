@@ -6,7 +6,6 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
-import banner from '../resources/banner.jpg'
 import BannerPic from '../resources/Brands/Banner.png'
 import DeltaPic from '../resources/Brands/Delta.svg'
 import GraingerPic from '../resources/Brands/Grainger.png'
@@ -22,14 +21,22 @@ import { useHistory } from 'react-router-dom'
 
 import Whatsapp from '../resources/whatsappLogo.png'
 
+const videoSource = process.env.REACT_APP_BUCKET + "videos/banner.gif"
+
 const BackDiv = styled.div`
     background: url(${Background});
     
 `
 
+const BackDivHome = styled.div`
+    background: url(${videoSource});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+`
+
 const Home = () => {
     const history = useHistory()
-    const videoSource = process.env.REACT_APP_BUCKET + "videos/DeproinvVideo.mp4"
     
     /*
     axios.get('https://deproapi.herokuapp.com/users/my-info', {
@@ -50,10 +57,12 @@ const Home = () => {
             </div>
                     <div className="flex justify-center bg-black">
                         <Icon icon={faArrowDown} className="absolute bottom-0 text-blue-300 text-5xl m-2 animate-bounce"/>
+                        {/*
                         <video className="w-full h-screen hidden md:inline" autoplay loop>
                             <source src={videoSource} type="video/mp4" />
                         </video>
-
+                        */}
+                        <BackDivHome className="w-full h-screen"/>
                         <div className="w-full h-screen bg-gray-600 md:hidden">
                             <div className="absolute w-full h-screen bottom-0 text-justify flex flex-col justify-center items-center">
                                 <img src={HomeLogo} className="lg:w-2/4"/>
