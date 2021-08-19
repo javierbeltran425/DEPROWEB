@@ -50,7 +50,7 @@ const Home = () => {
             </div>
                     <div className="flex justify-center bg-black">
                         <Icon icon={faArrowDown} className="absolute bottom-0 text-blue-300 text-5xl m-2 animate-bounce"/>
-                        <video className="w-full h-screen hidden md:inline" autoPlay loop>
+                        <video className="w-full h-screen hidden md:inline" autoplay loop>
                             <source src={videoSource} type="video/mp4" />
                         </video>
 
