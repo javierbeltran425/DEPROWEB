@@ -11,7 +11,19 @@ import Footer from '../Components/Footer'
 
 const AdminSendEmail = () => {
     const history = useHistory()
+    const isLogged = localStorage.getItem('token') != null
     var subject = useRef(null), content = useRef(null)
+
+    if(!isLogged)
+    history.push('/')
+
+    axios.get(process.env.REACT_APP_API_URL + 'users/my-info', {
+        headers: { Authorize: localStorage.getItem('token') }
+    })
+    .then(res => {
+        if( !res.data.user.admin ) 
+        history.push('/')
+    })
 
     const [ mutate, isLoading  ] = useMutation(data => {
         axios.post(process.env.REACT_APP_API_URL + 'users/send-global-mail', data)
