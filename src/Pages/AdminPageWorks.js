@@ -22,6 +22,14 @@ const AdminPageWorks = () => {
     if(!isLogged)
         history.push('/')
 
+    axios.get(process.env.REACT_APP_API_URL + 'users/my-info', {
+        headers: { Authorize: localStorage.getItem('token') }
+    })
+    .then(res => {
+        if( !res.data.user.admin ) 
+            history.push('/')
+    })
+
     const [ mutate, isLoading  ] = useMutation(data => {
         axios.post(process.env.REACT_APP_API_URL + 'works/work-register', data)
             .then(res => {
