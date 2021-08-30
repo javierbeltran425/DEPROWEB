@@ -123,7 +123,7 @@ const Products = () => {
                         <input value={search} onChange={onChange} type="text" placeholder="Buscar..." className="my-3 border rounded shadow-lg text-gray-600 px-2 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 outline-none w-3/4"></input>
                         <Icon icon={faSearch} className="mx-3"/>
                     </div>
-                    <div className="w-full min-h-screen flex flex-col lg:flex-row lg:flex-wrap justify-center">
+                    <div className="w-full h-full flex flex-col lg:flex-row lg:flex-wrap justify-center">
                         {content}
                         <a href="https://api.whatsapp.com/send?phone=50378532004" className="fixed z-10 w-10 h-10 md:w-16 md:h-16 m-10 right-0 bottom-0"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-900 opacity-75"></span><img src={Whatsapp}/></a>
                     </div>
