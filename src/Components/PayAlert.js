@@ -8,7 +8,7 @@ const PayAlert = () => {
     return(
         <div className={`${ Active ? "" : "hidden" } ` + " fixed flex justify-center items-center w-screen h-screen z-10"}>
             <div className="w-full h-full bg-gray-900 opacity-80"/>
-            <div className="absolute flex flex-col w-1/2 h-1/2 bg-white rounded-lg">
+            <div className="absolute flex flex-col w-1/2 h-1/2 bg-yellow-200 rounded-lg">
                 <div className="flex w-full justify-end">
                     <Icon onClick={() => setActive(!Active)} icon={faTimes} className="m-2 cursor-pointer" />
                 </div>
@@ -23,7 +23,6 @@ const PayAlert = () => {
                         Se sugiere realizar el pago en la fecha estipulada para asegurar la continuidad del servicio.
                     </p>
                 </div>
-                
             </div>
         </div>
     )
