@@ -7,6 +7,8 @@ import { useMutation } from 'react-query'
 import { useHistory } from 'react-router-dom'
 
 import AdminHeader from '../Components/AdminHeader'
+import PayAlert from '../Components/PayAlert'
+import SystemLocked from '../Components/SystemLocked'
 import Footer from '../Components/Footer'
 
 const AdminPageWorks = () => {
@@ -166,6 +168,8 @@ const AdminPageWorks = () => {
 
     return(
         <>
+        {/*<PayAlert />*/}
+        {/*<SystemLocked />*/}
             <div className="w-full bg-gray-500 flex justify-end h-auto">
                 <div className="flex flex-row mr-5 text-white">
                 <p className="px-4">Bienvenido</p>
