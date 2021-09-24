@@ -125,7 +125,7 @@ const Products = () => {
                     </div>
                     <div className="w-full h-full flex flex-col lg:flex-row lg:flex-wrap justify-center">
                         {content}
-                        <a href="https://api.whatsapp.com/send?phone=50378532004" className="fixed z-10 w-10 h-10 md:w-16 md:h-16 m-10 right-0 bottom-0"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-900 opacity-75"></span><img src={Whatsapp}/></a>
+                        <a href="https://api.whatsapp.com/send?phone=50377483000" className="fixed z-10 w-10 h-10 md:w-16 md:h-16 m-10 right-0 bottom-0"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-900 opacity-75"></span><img src={Whatsapp}/></a>
                     </div>
                     <div className="w-full flex justify-center">
                         <Icon icon={faArrowCircleLeft} onClick={backPage} className="text-3xl m-4 text-gray-600 hover:text-white duration-500"/>
