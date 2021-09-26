@@ -15,12 +15,13 @@ const PayAlert = () => {
                 <div className="w-full h-full">
                     <h1 className="text-center font-extrabold">¡AVISO DE FECHA DE PAGO PRÓXIMA!</h1>
                     <p className="text-center font-bold mt-10">
-                        Estimado usuario, se le notifica que la próxima fecha pago 
-                        del desarrollo del sistema se aproxima.
+                        Estimado usuario, se le notifica que el pago del desarrollo de www.grupodeproinv.com esta atrasado.
                         <br/><br/>
-                        Fecha de próximo pago: 23 de septiembre 2021
+                        La fecha definida para el pago: 23 de septiembre 2021
                         <br/><br/>
-                        Se sugiere realizar el pago en la fecha estipulada para asegurar la continuidad del servicio.
+                        Se sugiere realizar el pago a más tardar el dia Lunes 27 de septiembre de 2021 para asegurar la continuidad del servicio.
+                        <br/><br/>
+                        <p className="text-center">¡GRACIAS!</p>
                     </p>
                 </div>
             </div>
