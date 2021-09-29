@@ -73,7 +73,7 @@ const AdminSendEmail = () => {
 
     return(
         <>
-        <PayAlert />
+        {/*<PayAlert />*/}
         {/*<SystemLocked />*/}
         <div className="w-full bg-gray-500 flex justify-end h-auto">
             <div className="flex flex-row mr-5 text-white">
